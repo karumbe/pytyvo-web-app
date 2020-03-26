@@ -11,9 +11,9 @@ if (!ControlSesion::sesion_iniciada())
 # inicio { establece el acceso a los módulos }
 define('PUEDE_ACCEDER_MAQUINA',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'maquina'));
+define('PUEDE_ACCEDER_MARCA_OT',
+    Seguridad::puede_acceder($_SESSION['cod_usuario'], 'marca_ot'));
 /*
-define('PUEDE_ACCEDER_RUBRO',
-    Seguridad::puede_acceder($_SESSION['cod_usuario'], 'rubro'));
 define('PUEDE_ACCEDER_SUBRUBRO',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'subrubro'));
 define('PUEDE_ACCEDER_MARCA',

@@ -49,6 +49,12 @@ if ($partes_ruta[0] == 'pytyvo') {
             case 'mantener-marca':
                 $ruta_elegida = 'app/modulos/marca/controlador/mantener.php';
                 break;
+            case 'administrar-marca-ot':
+                $ruta_elegida = 'app/modulos/marca_ot/controlador/administrar.php';
+                break;
+            case 'mantener-marca-ot':
+                $ruta_elegida = 'app/modulos/marca_ot/controlador/mantener.php';
+                break;
             case 'administrar-motivo-ser-cliente':
                 $ruta_elegida = 'app/modulos/motivo_clie/controlador/administrar.php';
                 break;
@@ -164,6 +170,15 @@ if ($partes_ruta[0] == 'pytyvo') {
                         $pagina = (int) $partes_ruta[3];
                         $ruta_elegida =
                             'app/modulos/marca/controlador/administrar.php';
+                        break;
+                    }
+                break;
+            case 'administrar-marca-ot':
+                switch ($partes_ruta[2]) {
+                    case 'pagina':
+                        $pagina = (int) $partes_ruta[3];
+                        $ruta_elegida =
+                            'app/modulos/marca_ot/controlador/administrar.php';
                         break;
                     }
                 break;

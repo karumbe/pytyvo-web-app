@@ -38,7 +38,8 @@
                             ?>
 
                             <?php
-                            if (PUEDE_ACCEDER_MAQUINA) {
+                            if (PUEDE_ACCEDER_MAQUINA ||
+                                    PUEDE_ACCEDER_MARCA_OT) {
                                 ?>
                                 <li class="list-group-item"><a href="<?php echo RUTA_SERVICIO_TECNICO; ?>">Servicio técnico</a></li>
                                 <?php

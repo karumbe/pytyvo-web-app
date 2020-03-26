@@ -34,6 +34,8 @@ define('RUTA_MANTENER_UNIDAD_MEDIDA', SERVIDOR . '/mantener-unidad-medida');
 define('RUTA_SERVICIO_TECNICO', SERVIDOR . '/servicio-tecnico');
 define('RUTA_ADMINISTRAR_MAQUINA', SERVIDOR . '/administrar-maquina');
 define('RUTA_MANTENER_MAQUINA', SERVIDOR . '/mantener-maquina');
+define('RUTA_ADMINISTRAR_MARCA_OT', SERVIDOR . '/administrar-marca-ot');
+define('RUTA_MANTENER_MARCA_OT', SERVIDOR . '/mantener-marca-ot');
 
 // Recursos.
 define('RUTA_CSS', SERVIDOR . '/css/');
