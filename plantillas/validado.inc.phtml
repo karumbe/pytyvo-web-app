@@ -1,0 +1,40 @@
+
+<input type="hidden" name="codigo" <?php $validador->mostrar_codigo(); ?>>
+
+<?php
+if ($validador->obtener_error_codigo() !== '') {
+    ?>
+    <div class="form-group">
+        <?php $validador->mostrar_error_codigo(); ?>
+    </div>
+    <?php
+}
+?>
+
+<div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control text-uppercase" id="nombre"
+        name="nombre" minlength="6" maxlength="30"
+        <?php echo $validador->mostrar_nombre(); ?> required
+        <?php echo (defined('ESTA_RELACIONADO') && ESTA_RELACIONADO) ?
+            'readonly' : 'autofocus'; ?>>
+    <?php $validador->mostrar_error_nombre(); ?>
+</div>
+
+<div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input" id="vigente"
+        name="vigente" <?php $validador->mostrar_vigente(); ?>
+        <?php if (defined('ESTA_RELACIONADO') && ESTA_RELACIONADO)
+            echo 'autofocus'; ?>>
+    <label class="form-check-label" for="vigente">Vigente</label>
+</div>
+
+<?php
+if ($validador->obtener_error_vigente() !== '') {
+    ?>
+    <div class="form-group">
+        <?php $validador->mostrar_error_vigente(); ?>
+    </div>
+    <?php
+}
+?>

@@ -1,0 +1,114 @@
+
+<!-- inicio { breadcrumb } -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?php echo SERVIDOR; ?>"><i class="fas fa-home"></i>&#160;Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Clientes</li>
+    </ol>
+</nav>
+<!-- fin { breadcrumb } -->
+
+<div class="container rounded bg-white pt-3">
+    <!-- inicio { cabecera } -->
+    <div class="row">
+        <div class="col-md-6">
+            <h1>
+                Clientes
+                <a class="btn btn-outline-secondary btn-sm" role="button" href="<?php RUTA_CLIENTE; ?>" title="Recargar la página">
+                    <span class="fas fa-sync-alt"></span>
+                </a>
+            </h1>
+<!--            <form method="post" action="#">
+                <button type="submit" class="btn btn-success mt-3" name="new" title="Crear un nuevo registro"><i class="fas fa-plus"></i> Nuevo</button>
+            </form> -->
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline mt-2 mt-md-2 float-right" method="post" action="<?php echo RUTA_CLIENTE; ?>" onsubmit="return validar.buscarCliente();">
+                <input type="text" class="form-control mr-sm-2" id="buscar" name="buscar" minlength="6" maxlength="30" placeholder="Buscar por RUC, CI o nombre" aria-label="Buscar" value="<?php echo ${$entidad_buscar}; ?>" autocomplete="off" autofocus required>
+                <button type="submit" class="btn btn-outline-secondary my-2 my-sm-0" name="" title="Buscar">Buscar</button>
+            </form>
+        </div>
+    </div>
+    <!-- fin { cabecera } -->
+
+    <!-- inicio { paginación } -->
+    <?php
+    if (count($filas) > 0) {
+        ?>
+        <div class="d-flex justify-content-between">
+            <blockquote class="blockquote pt-0" style="border-left: .25rem solid #818a91; font-size: 1.0625rem; padding-left: 1rem;">
+                <p class="mb-0 mt-0">
+                    <?php echo number_format($numero_registros, 0, ',', '.') . (($numero_registros > 1) ? ' Registros' : ' Registro'); ?>
+                </p>
+                <footer class="blockquote-footer mt-0">
+                    <?php echo $en_pagina . (($en_pagina > 1) ? ' registros' : ' registro') . ' en página, ' . $total . (($total > 1) ? ' páginas' : ' página'); ?>
+                </footer>
+            </blockquote>
+            <div>
+                <div>
+                    <?php echo Utiles::obtener_paginacion($pagina, $total, RUTA_CLIENTE . '/pagina/'); ?>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+    <!-- fin { paginación } -->
+
+    <!-- inicio { detalle } -->
+    <div class="row pb-3">
+        <div class="col-md-12">
+            <?php
+            if (count($filas) > 0) {
+                ?>
+                <table class="table table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Código</th>
+                            <th>Nombre</th>
+                            <th>RUC</th>
+                            <th class="text-right">Saldo &#8370;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        for ($i = $inicio; $i < $fin; $i++) {
+                            $fila = $filas[$i];
+                            ?>
+                            <tr>
+                                <td class="text-center"><?php echo $fila->obtener_codigo(); ?></td>
+                                <td><a href="<?php echo RUTA_CLIENTE . '/ver/' . $fila->obtener_codigo(); ?>" target="_blank"><?php echo $fila->obtener_nombre(); ?></a></td>
+                                <td><?php echo $fila->obtener_ruc(); ?></td>
+                                <?php
+                                if ($fila->obtener_saldo_actu() !== 0) {
+                                    ?>
+                                    <td class="text-right">
+                                        <a href="<?php echo RUTA_CLIENTE . '/cuenta-por-cobrar/' . $fila->obtener_codigo(); ?>" target="_blank">
+                                            <?php echo number_format($fila->obtener_saldo_actu(), 0, ',', '.'); ?>
+                                        </a>
+                                    </td>
+                                    <?php
+                                } else {
+                                ?>
+                                    <td class="text-right"><?php echo number_format($fila->obtener_saldo_actu(), 0, ',', '.'); ?></td>
+                                <?php
+                                }
+                                ?>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+                <?php
+            } else {
+                ?>
+                <hr>
+                <h4 class="text-center">No hay datos para mostrar.</h4>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+    <!-- fin { detalle } -->
+</div>

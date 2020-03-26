@@ -1,0 +1,60 @@
+
+<!-- inicio { breadcrumb } -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?php echo SERVIDOR; ?>"><i class="fas fa-home"></i>&#160;Inicio</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo SERVIDOR; ?>">Definiciones</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Inventario</li>
+    </ol>
+</nav>
+<!-- fin { breadcrumb } -->
+
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <ul class="list-group">
+            <li class="list-group-item bg-trans-dark">Inventario</li>
+
+            <?php
+            if (PUEDE_ACCEDER_FAMILIA) {
+                ?>
+                <li class="list-group-item"><a href="<?php echo RUTA_ADMINISTRAR_FAMILIA; ?>">Familias</a></li>
+                <?php
+            }
+            ?>
+
+            <?php
+            if (PUEDE_ACCEDER_RUBRO) {
+                ?>
+                <li class="list-group-item"><a href="<?php echo RUTA_ADMINISTRAR_RUBRO; ?>">Rubros</a></li>
+                <?php
+            }
+            ?>
+
+            <?php
+            if (PUEDE_ACCEDER_SUBRUBRO) {
+                ?>
+                <li class="list-group-item"><a href="<?php echo RUTA_ADMINISTRAR_SUBRUBRO; ?>">Subrubros</a></li>
+                <?php
+            }
+            ?>
+
+
+            <?php
+            if (PUEDE_ACCEDER_MARCA) {
+                ?>
+                <li class="list-group-item"><a href="<?php echo RUTA_ADMINISTRAR_MARCA; ?>">Marcas</a></li>
+                <?php
+            }
+            ?>
+
+            <?php
+            if (PUEDE_ACCEDER_UNIDAD_MEDIDA) {
+                ?>
+                <li class="list-group-item"><a href="<?php echo RUTA_ADMINISTRAR_UNIDAD_MEDIDA; ?>">Unidades de medida</a></li>
+                <?php
+            }
+            ?>
+
+        </ul>
+    </div>
+</div>

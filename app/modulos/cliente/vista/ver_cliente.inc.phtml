@@ -1,0 +1,210 @@
+
+<div class="container" style="margin-top: 90px;">
+    <div class="card">
+        <div class="card-header text-uppercase text-center">
+            Información del cliente
+        </div>
+        <div class="card-body">
+            <div class="container">
+                <div class="form-row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="codigo">Código</label>
+                            <input type="text" class="form-control" id="codigo" name="codigo" minlength="1" maxlength="5" value="<?php echo $cliente->obtener_codigo(); ?>" readonly required>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" minlength="6" maxlength="56" value="<?php echo htmlspecialchars($cliente->obtener_nombre(), ENT_QUOTES); ?>" readonly required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="encabezado-panel">Datos Generales</div>
+
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="direc1">Dirección</label>
+                            <input type="text" class="form-control" id="direc1" name="direc1" minlength="0" maxlength="60" value="<?php echo htmlspecialchars($cliente->obtener_direc1(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="direc2" name="direc2" minlength="0" maxlength="60" value="<?php echo htmlspecialchars($cliente->obtener_direc2(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="direc3" name="direc3" minlength="0" maxlength="60" value="<?php echo htmlspecialchars($cliente->obtener_direc3(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="direc4" name="direc4" minlength="0" maxlength="60" value="<?php echo htmlspecialchars($cliente->obtener_direc4(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="direc5" name="direc5" minlength="0" maxlength="60" value="<?php echo htmlspecialchars($cliente->obtener_direc5(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="direc6" name="direc6" minlength="0" maxlength="60" value="<?php echo htmlspecialchars($cliente->obtener_direc6(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="direc7" name="direc7" minlength="0" maxlength="60" value="<?php echo htmlspecialchars($cliente->obtener_direc7(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="direc8" name="direc8" minlength="0" maxlength="60" value="<?php echo htmlspecialchars($cliente->obtener_direc8(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="direc9" name="direc9" minlength="0" maxlength="60" value="<?php echo htmlspecialchars($cliente->obtener_direc9(), ENT_QUOTES); ?>" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="departamen">Departamento</label>
+                            <select class="form-control text-uppercase" id="departamen" name="departamen" disabled required>
+                                <option value="<?php echo $cliente->obtener_departamen(); ?>" selected><?php echo htmlspecialchars($depar->obtener_nombre(), ENT_QUOTES); ?></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad</label>
+                            <select class="form-control text-uppercase" id="ciudad" name="ciudad" disabled required>
+                                <option value="<?php echo $cliente->obtener_ciudad(); ?>" selected><?php echo htmlspecialchars($ciudad->obtener_nombre(), ENT_QUOTES); ?></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="barrio">Barrio</label>
+                            <select class="form-control text-uppercase" id="barrio" name="barrio" disabled required>
+                                <option value="<?php echo $cliente->obtener_barrio(); ?>" selected><?php echo htmlspecialchars($barrio->obtener_nombre(), ENT_QUOTES); ?></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ruta">Ruta</label>
+                            <select class="form-control text-uppercase" id="ruta" name="ruta" disabled required>
+                                <option value="<?php echo $cliente->obtener_ruta(); ?>" selected><?php echo htmlspecialchars($ruta->obtener_nombre(), ENT_QUOTES); ?></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" class="form-control" id="telefono" name="telefono" minlength="0" maxlength="30" value="<?php echo htmlspecialchars($cliente->obtener_telefono(), ENT_QUOTES); ?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="fax">Fax</label>
+                            <input type="text" class="form-control" id="fax" name="fax" minlength="0" maxlength="30" value="<?php echo htmlspecialchars($cliente->obtener_fax(), ENT_QUOTES); ?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correo" name="correo" minlength="0" maxlength="40" value="<?php echo $cliente->obtener_correo(); ?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="contacto">Contacto</label>
+                            <input type="text" class="form-control" id="contacto" name="contacto" minlength="0" maxlength="30" value="<?php echo htmlspecialchars($cliente->obtener_contacto(), ENT_QUOTES); ?>" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="fechaNac">Fecha de nacimiento</label>
+                            <input type="date" class="form-control" id="fechaNac" name="fechanac" value="<?php echo $cliente->obtener_fechanac(); ?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="documento">Documento</label>
+                            <input type="text" class="form-control" id="documento" name="documento" minlength="6" maxlength="15" value="<?php echo $cliente->obtener_documento(); ?>" readonly required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ruc">RUC</label>
+                            <input type="text" class="form-control" id="ruc" name="ruc" minlength="6" maxlength="15" value="<?php echo $cliente->obtener_ruc(); ?>" readonly required>
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select class="form-control text-uppercase" id="estado" name="estado" disabled required>
+                                <option value="A"<?php echo $cliente->obtener_estado() === 'A' ? ' selected' : ''; ?>>Activo</option>
+                                <option value="I"<?php echo $cliente->obtener_estado() === 'I' ? ' selected' : ''; ?>>Inactivo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="encabezado-panel">Datos Comerciales</div>
+
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="plazo">Plazo</label>
+                            <select class="form-control text-uppercase" id="plazo" name="plazo" disabled>
+                                <option value="<?php echo $cliente->obtener_plazo(); ?>" selected><?php echo $cliente->obtener_plazo() !== 0 ? htmlspecialchars($plazo->obtener_nombre(), ENT_QUOTES) : 'Solo contado'; ?></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vendedor">Vendedor</label>
+                            <select class="form-control text-uppercase" id="vendedor" name="vendedor" disabled>
+                                <option value="<?php echo $cliente->obtener_vendedor(); ?>" selected><?php echo $cliente->obtener_vendedor() !== 0 ? htmlspecialchars($vendedor->obtener_nombre(), ENT_QUOTES) : 'Cualquiera'; ?></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="limiteCre">Límite de crédito &#8370;</label>
+                            <input type="text" class="form-control" id="limiteCre" name="limite_cre" minlength="0" maxlength="11" value="<?php echo number_format($cliente->obtener_limite_cre(), 0, ',', '.'); ?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <?php
+                            if ($cliente->obtener_saldo_actu() !== 0) {
+                                ?>
+                                <a href="<?php echo RUTA_CLIENTE . '/cuenta-por-cobrar/' . $cliente->obtener_codigo(); ?>" target="_blank">
+                                    Saldo actual &#8370;
+                                </a>
+                                <input type="text" class="form-control" id="saldoActu" name="saldo_actu" minlength="0" maxlength="15" value="<?php echo number_format($cliente->obtener_saldo_actu(), 0, ',', '.'); ?>" readonly>
+                                <?php
+                            } else {
+                            ?>
+                                <label for="saldoActu">Saldo actual &#8370;</label>
+                                <input type="text" class="form-control" id="saldoActu" name="saldo_actu" minlength="0" maxlength="15" value="<?php echo number_format($cliente->obtener_saldo_actu(), 0, ',', '.'); ?>" readonly>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="facturar"<?php echo $cliente->obtener_facturar() !== 'S' ? '' : ' checked'; ?> disabled>
+                            <label class="form-check-label" for="facturar">Facturar con cuenta atrasada</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="lista">Lista de precios</label>
+                            <select class="form-control" id="lista" name="lista" disabled required>
+                                <option value="1"<?php echo $cliente->obtener_lista() === 1 ? ' selected' : ''; ?>>1</option>
+                                <option value="2"<?php echo $cliente->obtener_lista() === 2 ? ' selected' : ''; ?>>2</option>
+                                <option value="3"<?php echo $cliente->obtener_lista() === 3 ? ' selected' : ''; ?>>3</option>
+                                <option value="4"<?php echo $cliente->obtener_lista() === 4 ? ' selected' : ''; ?>>4</option>
+                                <option value="5"<?php echo $cliente->obtener_lista() === 5 ? ' selected' : ''; ?>>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecIOper">Es cliente desde</label>
+                            <input type="date" class="form-control" id="fecIOper" name="fec_ioper" value="<?php echo $cliente->obtener_fec_ioper(); ?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="motivoClie">Es cliente por</label>
+                            <select class="form-control text-uppercase" id="motivoClie" name="motivoclie" disabled required>
+                                <option value="<?php echo $cliente->obtener_motivoclie(); ?>" selected><?php echo htmlspecialchars($motivo_clie->obtener_nombre(), ENT_QUOTES); ?></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="oDatosClie">Otros datos</label>
+                            <input type="text" class="form-control" id="oDatosClie" name="odatosclie" minlength="0" maxlength="40" value="<?php echo htmlspecialchars($cliente->obtener_odatosclie(), ENT_QUOTES); ?>" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="encabezado-panel">Observaciones y referencias</div>
+
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="obs1">Observaciones</label>
+                            <input type="text" class="form-control" id="obs1" name="obs1" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_obs1(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="obs2" name="obs2" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_obs2(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="obs3" name="obs3" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_obs3(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="obs4" name="obs4" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_obs4(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="obs5" name="obs5" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_obs5(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="obs6" name="obs6" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_obs6(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="obs7" name="obs7" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_obs7(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="obs8" name="obs8" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_obs8(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="obs9" name="obs9" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_obs9(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="obs10" name="obs10" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_obs10(), ENT_QUOTES); ?>" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="obs1">Referencias comerciales</label>
+                            <input type="text" class="form-control" id="ref1" name="ref1" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_ref1(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="ref2" name="ref2" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_ref2(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="ref3" name="ref3" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_ref3(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="ref4" name="ref4" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_ref4(), ENT_QUOTES); ?>" readonly>
+                            <input type="text" class="form-control" id="ref5" name="ref5" minlength="0" maxlength="72" value="<?php echo htmlspecialchars($cliente->obtener_ref5(), ENT_QUOTES); ?>" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

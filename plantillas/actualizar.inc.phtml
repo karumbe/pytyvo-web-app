@@ -1,0 +1,24 @@
+
+<input type="hidden" name="codigo"
+    value="<?php echo $modelo->obtener_codigo(); ?>">
+
+<div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control text-uppercase" id="nombre"
+        name="nombre" minlength="6" maxlength="30"
+        value="<?php echo $modelo->obtener_nombre(); ?>" required
+        <?php echo (defined('ESTA_RELACIONADO') && ESTA_RELACIONADO) ?
+            'readonly' : 'autofocus'; ?>>
+    <div class="alert alert-danger alerta-peligro" role="alert"
+        id="error-nombre">
+    </div>
+</div>
+
+<div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input" id="vigente"
+        name="vigente"
+        <?php if ($modelo->esta_vigente()) echo 'checked'; ?>
+        <?php if (defined('ESTA_RELACIONADO') && ESTA_RELACIONADO)
+            echo 'autofocus'; ?>>
+    <label class="form-check-label" for="vigente">Vigente</label>
+</div>

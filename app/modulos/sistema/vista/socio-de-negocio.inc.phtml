@@ -1,0 +1,25 @@
+
+<!-- inicio { breadcrumb } -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?php echo SERVIDOR; ?>"><i class="fas fa-home"></i>&#160;Inicio</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo SERVIDOR; ?>">Definiciones</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Socios de negocios</li>
+    </ol>
+</nav>
+<!-- fin { breadcrumb } -->
+
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <ul class="list-group">
+            <li class="list-group-item bg-trans-dark">Socios de negocios</li>
+            <?php
+            if (MOTIVO_CLIE) {
+                ?>
+                <li class="list-group-item"><a href="<?php echo RUTA_ADMINISTRAR_MOTIVO_CLIE; ?>">Motivos de ser cliente</a></li>
+                <?php
+            }
+            ?>
+        </ul>
+    </div>
+</div>

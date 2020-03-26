@@ -1,0 +1,139 @@
+
+<!-- inicio { breadcrumb } -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?php echo SERVIDOR; ?>"><i class="fas fa-home"></i>&#160;Inicio</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo SERVIDOR; ?>">Definiciones</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo RUTA_SOCIO_NEGOCIO; ?>">Socios de negocios</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Motivos de ser cliente</li>
+    </ol>
+</nav>
+<!-- fin { breadcrumb } -->
+
+<div class="container rounded bg-white pt-3">
+    <!-- inicio { cabecera } -->
+    <div class="row">
+        <div class="col-md-6">
+            <h1>
+                Motivos de ser cliente
+                <a class="btn btn-outline-secondary btn-sm" role="button" href="<?php echo RUTA_ADMINISTRAR; ?>" title="Recargar la página">
+                    <span class="fas fa-sync-alt"></span>
+                </a>
+            </h1>
+            <?php
+            if (Seguridad::puede_agregar($_SESSION['cod_usuario'], MODULO)) {
+                ?>
+                <form method="post" action="<?php echo RUTA_MANTENER; ?>">
+                    <button type="submit" class="btn btn-success mb-3" name="crear" title="Crear un nuevo registro"><i class="fas fa-plus"></i> Nuevo</button>
+                </form>
+                <?php
+            }
+            ?>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline mt-2 mt-md-2 float-right" method="post" action="<?php echo RUTA_ADMINISTRAR; ?>">
+                <input type="text" class="form-control mr-sm-2" id="buscar" name="buscar" minlength="0" maxlength="30" placeholder="Buscar por nombre" aria-label="Buscar" value="<?php echo ${$entidad_buscar}; ?>" autocomplete="off" autofocus>
+                <button type="submit" class="btn btn-outline-secondary my-2 my-sm-0" name="" title="Buscar">Buscar</button>
+            </form>
+        </div>
+    </div>
+    <!-- fin { cabecera } -->
+
+    <!-- inicio { paginación } -->
+    <?php
+    if (count($filas) > 0) {
+        ?>
+        <div class="d-flex justify-content-between">
+            <blockquote class="blockquote pt-0" style="border-left: .25rem solid #818a91; font-size: 1.0625rem; padding-left: 1rem;">
+                <p class="mb-0 mt-0">
+                    <?php echo number_format($numero_registros, 0, ',', '.') . (($numero_registros > 1) ? ' Registros' : ' Registro'); ?>
+                </p>
+                <footer class="blockquote-footer mt-0">
+                    <?php echo $en_pagina . (($en_pagina > 1) ? ' registros' : ' registro') . ' en página, ' . $total . (($total > 1) ? ' páginas' : ' página'); ?>
+                </footer>
+            </blockquote>
+            <div>
+                <div>
+                    <?php echo Utiles::obtener_paginacion($pagina, $total, RUTA_ADMINISTRAR . '/pagina/'); ?>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+    <!-- fin { paginación } -->
+
+    <!-- inicio { detalle } -->
+    <div class="row pb-3">
+        <div class="col-md-12">
+            <?php
+            if (count($filas) > 0) {
+                ?>
+                <table class="table table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Código</th>
+                            <th>Nombre</th>
+                            <th class="text-center">Vigente</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        for ($i = $inicio; $i < $fin; $i++) {
+                            $fila = $filas[$i];
+                            ?>
+                            <tr>
+                                <td class="text-center"><?php echo $fila->obtener_codigo(); ?></td>
+                                <td><?php echo $fila->obtener_nombre(); ?></td>
+                                <td class="text-center"><?php echo ($fila->esta_vigente()) ? 'Sí' : 'No'; ?></td>
+                                <td class="text-right">
+                                    <form method="post" action="<?php echo RUTA_MANTENER; ?>">
+                                        <input type="hidden" name="codigo" value="<?php echo $fila->obtener_codigo(); ?>">
+                                        <button type="submit" class="btn btn-outline-secondary btn-sm" name="leer" title="Ver"><i class="far fa-eye"></i></button>
+                                    </form>
+                                </td>
+                                <td class="text-center">
+                                    <?php
+                                    if (PUEDE_MODIFICAR) {
+                                        ?>
+                                        <form method="post" action="<?php echo RUTA_MANTENER ?>">
+                                            <input type="hidden" name="codigo" value="<?php echo $fila->obtener_codigo(); ?>">
+                                            <button type="submit" class="btn btn-outline-secondary btn-sm" name="actualizar" title="Editar"><i class="fas fa-edit"></i></button>
+                                        </form>
+                                        <?php
+                                    }
+                                    ?>
+                                </td>
+                                <td class="text-left">
+                                    <?php
+                                    if (PUEDE_BORRAR) {
+                                        ?>
+                                        <form method="post" action="<?php echo RUTA_MANTENER; ?>">
+                                            <input type="hidden" name="codigo" value="<?php echo $fila->obtener_codigo(); ?>">
+                                            <button type="submit" class="btn btn-outline-danger btn-sm" name="borrar" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
+                                        </form>
+                                        <?php
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+                <?php
+            } else {
+                ?>
+                <hr>
+                <h4 class="text-center">No hay datos para mostrar.</h4>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+    <!-- fin { detalle } -->
+</div>

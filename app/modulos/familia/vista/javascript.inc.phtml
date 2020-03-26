@@ -1,0 +1,28 @@
+        <script src="<?php echo RUTA_JS ?>utiles.js"></script>
+        <script src="<?php echo RUTA_JS ?>familiaValidador.js"></script>
+        <script>
+            (function() {
+                if (document.getElementById('error-nombre').innerHTML.trim() !== '')
+                    utiles.mostrarElemento('error-nombre');
+
+                if (document.getElementById('error-p1').innerHTML.trim() !== '')
+                    utiles.mostrarElemento('error-p1');
+
+                if (document.getElementById('error-p2').innerHTML.trim() !== '')
+                    utiles.mostrarElemento('error-p2');
+
+                if (document.getElementById('error-p3').innerHTML.trim() !== '')
+                    utiles.mostrarElemento('error-p3');
+
+                if (document.getElementById('error-p4').innerHTML.trim() !== '')
+                    utiles.mostrarElemento('error-p4');
+
+                if (document.getElementById('error-p5').innerHTML.trim() !== '')
+                    utiles.mostrarElemento('error-p5');
+            })();
+
+            const config = {
+                ajax: '<?php echo SERVIDOR; ?>' + '/ajax/',
+                modulo: 'familia'
+            }
+        </script>

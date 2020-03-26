@@ -1,0 +1,34 @@
+
+<input type="hidden" name="codigo" value="0">
+
+<div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control text-uppercase" id="nombre"
+        name="nombre" minlength="6" maxlength="30" value=""
+        required autofocus>
+    <div class="alert alert-danger alerta-peligro" role="alert"
+        id="error-nombre">
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="simbolo">Símbolo</label>
+    <input type="text" class="form-control text-uppercase" id="simbolo"
+        name="simbolo" minlength="1" maxlength="5" value=""
+        required autofocus>
+    <div class="alert alert-danger alerta-peligro" role="alert"
+        id="error-simbolo">
+    </div>
+</div>
+
+<div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input" id="divisible"
+        name="divisible">
+    <label class="form-check-label" for="divisible">Divisible</label>
+</div>
+
+<div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input" id="vigente"
+        name="vigente" checked>
+    <label class="form-check-label" for="vigente">Vigente</label>
+</div>

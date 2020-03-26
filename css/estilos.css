@@ -1,0 +1,161 @@
+body {
+    /**
+    * La imagen se fija en la ventana de visualización para que la altura de 
+    * la imagen no supere a la del contenido.
+    */
+    background-attachment: fixed;
+    /**
+    * Se muestra un color de fondo mientras se está cargando la imagen de 
+    * fondo o si hay problemas para cargarla. 
+    */
+    background-color: #e9ebee;
+    /* Ubicación de la imágen. */
+    background-image: url(../img/winter_fruehling_2012_stihl_v2.jpg);
+    /* Para dejar la imagen de fondo centrada, vertical y horizontalmente. */
+    background-position: center center;
+    /* Para que la imagen no se repita. */
+    background-repeat: no-repeat;
+    /**
+    * La imagen de fondo se reescala automáticamente con el cambio del ancho 
+    * de ventana del navegador. 
+    */
+    background-size: cover;
+    /* Define una lista de fuentes o familias de fuentes. */
+    font-family: 'Roboto', sans-serif;
+}
+
+input:required, input:required:not([readonly]):focus,
+select:required, select:required:not([readonly]):focus,
+textarea:required, textarea:required:not([readonly]):focus {
+    background-color: #fcfcd7;
+}
+
+/**
+* https://stackoverflow.com/questions/3790935/can-i-hide-the-html5-number-input-s-spin-box
+* Hides the spin buttons.
+*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+.alert-danger {
+    border-left: 4px solid #c9302c;
+}
+
+.alerta-peligro {
+    border-left: 1px solid transparent;
+    border-radius: 5px;
+    display: none;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    padding: 0.2rem;
+}
+
+.asterisco {
+    color: red;
+    font-size: 0.5rem;
+}
+
+/**
+* https://flatuicolors.com/palette/cn
+* anti-flash white
+*/
+.bg-anti-flash-white {
+    background-color: #f1f2f6;
+}
+
+/**
+* https://flatuicolors.com/palette/us
+* city lights
+*/
+.bg-city-lights {
+    background-color: #dfe6e9;
+}
+
+.bg-dark {
+    color: #f8f9fa;
+}
+
+/**
+* https://flatuicolors.com/palette/us
+* soothing breeze
+*/
+.bg-soothing-breeze {
+    background-color: #b2bec3;
+}
+
+.bg-trans-dark {
+    background-color: rgba(52, 52, 52, .8);
+    color: #f8f9fa;
+}
+
+.borde-redondo-derecha {
+    border-radius: 0 14px 14px 0;
+}
+
+.borde-redondo-izquierda {
+    border-radius: 14px 0 0 14px;
+}
+
+.boton-buscador {
+    padding-left: 0px;
+}
+
+.elemento-lista-sin-estilo {
+    list-style: none;
+}
+
+.encabezado-panel {
+    background: #4e4e4e linear-gradient(180deg, #686868, #4e4e4e) repeat-x;
+    box-shadow: .66667px .66667px 2px 0 rgba(0, 0, 0, .3);
+    color: #f8f9fa;
+    line-height: normal;
+    margin-bottom: .6rem;
+    margin-top: .3rem;
+    padding: .6rem 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.pie-pagina {
+    background-color: #343a40;
+    color: #f8f9fa;
+    display: block;
+    height: 30px;
+    line-height: 29px;
+    width: 100%;
+}
+
+.pie-pagina-modulos {
+    font-size: .8rem;
+}
+
+.pie-pagina-modulos h4 {
+    font-size: .9rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.pie-pagina-modulos hr {
+    border-top: 1px solid #55595c;
+    margin: 0;
+}
+
+.pie-pagina-modulos ul > li {
+    color: gray;
+}
+
+.pie-pagina-modulos ul > li > a:link, .pie-pagina-modulos ul > li > a:visited {
+    color: gray !important;
+}
+
+.texto-buscador {
+    padding-right: 0px;
+}

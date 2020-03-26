@@ -1,0 +1,61 @@
+<!--
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <ul class="list-group">
+            <li class="list-group-item">Consultas</li>
+            <li class="list-group-item"><a href="<?php echo RUTA_CLIENTE; ?>">Clientes</a></li>
+            <li class="list-group-item"><a href="<?php echo RUTA_ADMINISTRAR_MOTIVO_CLIE; ?>">Motivos de ser cliente</a></li>
+        </ul>
+    </div>
+</div>
+-->
+<div class="container" style="margin-top: 40px;">
+    <div class="card">
+        <div class="card-header text-uppercase text-center">
+            Bienvenido
+        </div>
+        <div class="card-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-4 col-lg-3 mt-3 mb-3">
+                        <ul class="list-group">
+                            <li class="list-group-item bg-trans-dark">Definiciones</li>
+                            <li class="list-group-item"><a href="#">General</a></li>
+                            <li class="list-group-item"><a href="#">Finanzas</a></li>
+                            <li class="list-group-item"><a href="#">Compras</a></li>
+                            <li class="list-group-item"><a href="<?php echo RUTA_SOCIO_NEGOCIO; ?>">Socios de negocios</a></li>
+
+                            <?php
+                            if (PUEDE_ACCEDER_FAMILIA ||
+                                    PUEDE_ACCEDER_RUBRO ||
+                                    PUEDE_ACCEDER_SUBRUBRO ||
+                                    PUEDE_ACCEDER_MARCA ||
+                                    PUEDE_ACCEDER_UNIDAD_MEDIDA) {
+                                ?>
+                                <li class="list-group-item"><a href="<?php echo RUTA_INVENTARIO; ?>">Inventario</a></li>
+                                <?php
+                            }
+                            ?>
+
+                            <?php
+                            if (PUEDE_ACCEDER_MAQUINA) {
+                                ?>
+                                <li class="list-group-item"><a href="<?php echo RUTA_SERVICIO_TECNICO; ?>">Servicio técnico</a></li>
+                                <?php
+                            }
+                            ?>
+
+                            <li class="list-group-item"><a href="#">Recursos humanos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-4 col-lg-3 mt-3 mb-3">
+                        <ul class="list-group">
+                            <li class="list-group-item bg-trans-dark">Socios de negocios</li>
+                            <li class="list-group-item"><a href="<?php echo RUTA_CLIENTE; ?>">Clientes</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

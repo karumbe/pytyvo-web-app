@@ -1,0 +1,16 @@
+        <script src="<?php echo RUTA_JS ?>utiles.js"></script>
+        <script src="<?php echo RUTA_JS ?>unidadMedidaValidador.js"></script>
+        <script>
+            (function() {
+                if (document.getElementById('error-nombre').innerHTML.trim() !== '')
+                    utiles.mostrarElemento('error-nombre');
+
+                if (document.getElementById('error-simbolo').innerHTML.trim() !== '')
+                    utiles.mostrarElemento('error-simbolo');
+            })();
+
+            const config = {
+                ajax: '<?php echo SERVIDOR; ?>' + '/ajax/',
+                modulo: 'unidad-medida'
+            }
+        </script>

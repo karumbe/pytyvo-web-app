@@ -1,0 +1,123 @@
+
+<div class="container" style="margin-top: 90px;">
+    <!-- inicio { cabecera } -->
+    <div class="card">
+        <div class="card-header text-uppercase text-center">
+            Estado de Cuenta
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="encabezado-panel">Detalle de la Cuenta</div>
+
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>Cliente</td>
+                                <td><a href="<?php echo RUTA_CLIENTE . '/ver/' . $cuenta_por_cobrar[0]->obtener_cod_cliente(); ?>" target="_blank"><?php echo $cuenta_por_cobrar[0]->obtener_cliente(); ?></a></td>
+                                <td>RUC</td>
+                                <td><?php echo $cuenta_por_cobrar[0]->obtener_ruc(); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Dirección</td>
+                                <td colspan="3"><?php echo $cuenta_por_cobrar[0]->obtener_direccion(); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Ciudad</td>
+                                <td><?php echo $cuenta_por_cobrar[0]->obtener_ciudad() . '&#160; | &#160;Dpto.: ' . $cuenta_por_cobrar[0]->obtener_departamen(); ?></td>
+                                <td>Cód. Cliente</td>
+                                <td><?php echo $cuenta_por_cobrar[0]->obtener_cod_cliente(); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Teléfono</td>
+                                <td><?php echo $cuenta_por_cobrar[0]->obtener_telefono(); ?></td>
+                                <td colspan="2" class="text-center"><a href="<?php echo RUTA_CLIENTE . '/estado-de-cuenta/' . $cuenta_por_cobrar[0]->obtener_cod_cliente(); ?>">Imprimir Estado de Cuenta del Cliente</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- fin { cabecera } -->
+
+            <!-- inicio { detalle } -->
+            <div class="row pb-3">
+                <div class="col-md-12">
+                    <?php
+                    if (count($cuenta_por_cobrar) > 0) {
+                        ?>
+
+                        <div class="encabezado-panel">Transacciones</div>
+
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Factura Nº</th>
+                                    <th class="text-center">Cuota</th>
+                                    <th class="text-center">Fecha Emisión</th>
+                                    <th class="text-center">Fecha Vencimiento</th>
+                                    <th class="text-right">Saldo</th>
+                                    <th class="text-center"></th>
+                                    <th class="text-right">Días</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                foreach ($totales as $moneda) {
+                                    $simbolo = $moneda['simbolo'];
+
+                                    if ($moneda['cod_moneda'] === 1)
+                                        $simbolo = '&#8370;';
+                                    ?>
+                                    <tr>
+                                        <td class="text-uppercase bg-anti-flash-white" colspan="7"><?php echo $simbolo . ' - ' . $moneda['moneda']; ?></td>
+                                    </tr>
+                                    <?php
+                                    for ($i = 0; $i < count($cuenta_por_cobrar); $i++) {
+                                        $fila = $cuenta_por_cobrar[$i];
+
+                                        if ($fila->obtener_cod_moneda() === $moneda['cod_moneda']) {
+                                            ?>
+                                            <tr<?php echo $fila->obtener_dias() <= 0 ? ' class="text-danger"' : ''; ?>>
+                                                <td class="text-center"><?php echo $fila->obtener_nrofact(); ?></td>
+                                                <td class="text-center"><?php echo $fila->obtener_cuota(); ?></td>
+                                                <td class="text-center"><?php echo date('d/m/Y', strtotime($fila->obtener_fecha_emi())); ?></td>
+                                                <td class="text-center"><?php echo date('d/m/Y', strtotime($fila->obtener_fecha_vto())); ?></td>
+                                                <td class="text-right"><?php echo number_format($fila->obtener_saldo(), $moneda['decimales'], ',', '.'); ?></td>
+                                                <td class="text-center"><?php echo $simbolo; ?></td>
+                                                <td class="text-right"><?php echo $fila->obtener_dias(); ?></td>
+                                            </tr>
+                                        <?php
+                                        }
+                                    }    // for ($i = 0; $i < count($cuenta_por_cobrar); $i++)
+                                    ?>
+                                    <tr class="text-center bg-anti-flash-white">
+                                        <td colspan="2">Vencidos</td>
+                                        <td>A Vencer</td>
+                                        <td>Venc. del Mes</td>
+                                        <td colspan="3">TOTAL</td>
+                                    </tr>
+                                    <tr class="text-center bg-anti-flash-white">
+                                        <td colspan="2"><?php echo number_format($moneda['vencidos'], $moneda['decimales'], ',', '.') . ' ' . $simbolo; ?></td>
+                                        <td><?php echo number_format($moneda['a_vencer'], $moneda['decimales'], ',', '.') . ' ' . $simbolo; ?></td>
+                                        <td><?php echo number_format($moneda['venc_del_mes'], $moneda['decimales'], ',', '.') . ' ' . $simbolo; ?></td>
+                                        <td colspan="3"><?php echo number_format($moneda['total'], $moneda['decimales'], ',', '.') . ' ' . $simbolo; ?></td>
+                                    </tr>
+                                <?php
+                                }    // foreach ($totales as $moneda)
+                                ?>
+                            </tbody>
+                        </table>
+                        <?php
+                    } else {
+                        ?>
+                        <hr>
+                        <h4 class="text-center">No hay datos para mostrar.</h4>
+                        <?php
+                    }
+                    ?>
+                </div>
+            </div>
+            <!-- fin { detalle } -->
+        </div>    <!-- <div class="card-body"> -->
+    </div>    <!-- <div class="card"> -->
+</div>

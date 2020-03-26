@@ -1,0 +1,13 @@
+<?php
+if (($peticion === 'crear' || $peticion === 'actualizar') &&
+        isset($validador))
+    include_once 'validado.inc.phtml';
+elseif ($peticion === 'crear' && !isset($modelo) && !isset($validador))
+    include_once 'crear.inc.phtml';
+elseif ($peticion === 'actualizar' && isset($modelo) &&
+        !isset($validador))
+    include_once 'actualizar.inc.phtml';
+elseif (($peticion === 'leer' || $peticion === 'borrar') &&
+        isset($modelo) && !isset($validador))
+    include_once 'borrar.inc.phtml';
+?>
