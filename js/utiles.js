@@ -1,6 +1,9 @@
 const utiles = {
 
     existeElemento: function(id) {
+        if (typeof id !== 'string')
+            throw "El par\u00e1metro 'id' del m\u00e9todo 'existeElemento' en el espacio de nombre 'utiles', debe ser de tipo cadena.";
+
         let elemento = document.getElementById(id);
 
         if (elemento !== null)
@@ -9,28 +12,94 @@ const utiles = {
             return false;
     },
     ocultarElemento: function(id) {
+        if (typeof id !== 'string')
+            throw "El par\u00e1metro 'id' del m\u00e9todo 'ocultarElemento' en el espacio de nombre 'utiles', debe ser de tipo cadena.";
+
         if (this.existeElemento(id))
             document.getElementById(id).style.display = 'none';
     },
     mostrarElemento: function(id) {
+        if (typeof id !== 'string')
+            throw "El par\u00e1metro 'id' del m\u00e9todo 'mostrarElemento' en el espacio de nombre 'utiles', debe ser de tipo cadena.";
+
         if (this.existeElemento(id))
             document.getElementById(id).style.display = 'block';
     },
     establecerEnfoque: function(id) {
+        if (typeof id !== 'string')
+            throw "El par\u00e1metro 'id' del m\u00e9todo 'establecerEnfoque' en el espacio de nombre 'utiles', debe ser de tipo cadena.";
+
         if (this.existeElemento(id)) {
             let elemento = document.getElementById(id);
 
             elemento.focus();
-            elemento.select();
+
+            if (elemento.type === 'text')
+                elemento.select();
         } else
             console.log("utiles.establecerEnfoque(): El id '" + id + "' no existe.");
+    },
+    habilitarElemento: function(id) {
+        if (typeof id !== 'string')
+            throw "El par\u00e1metro 'id' del m\u00e9todo 'habilitarElemento' en el espacio de nombre 'utiles', debe ser de tipo cadena.";
+
+        if (this.existeElemento(id)) {
+            let elemento = document.getElementById(id);
+
+            switch (elemento.type) {
+                case 'select-one':
+                    elemento.disabled = false;
+                    break;
+                default:
+                    console.log("utiles.habilitarElemento(): El tipo de elemento '" + elemento.type + "' no está soportado.");
+            }
+        } else
+            console.log("utiles.habilitarElemento(): El id '" + id + "' no existe.");
+    },
+    elementoEstaHabilitado: function(id) {
+        if (typeof id !== 'string')
+            throw "El par\u00e1metro 'id' del m\u00e9todo 'elementoEstaHabilitado' en el espacio de nombre 'utiles', debe ser de tipo cadena.";
+
+        if (this.existeElemento(id)) {
+            let elemento = document.getElementById(id);
+
+            switch (elemento.type) {
+                case 'select-one':
+                    return !elemento.disabled;
+                    break;
+                default:
+                    console.log("utiles.elementoEstaHabilitado(): El tipo de elemento '" + elemento.type + "' no está soportado.");
+                    return false;
+            }
+        } else {
+            console.log("utiles.elementoEstaHabilitado(): El id '" + id + "' no existe.");
+            return false;
+        }
+    },
+    establecerAtributo: function(id, atributo, valor = '') {
+        // inicio { validaciones de parámetros }
+        if (typeof id !== 'string')
+            throw "El par\u00e1metro 'id' del m\u00e9todo 'establecerAtributo' en el espacio de nombre 'utiles', debe ser de tipo cadena.";
+
+        if (typeof atributo !== 'string')
+            throw "El par\u00e1metro 'atributo' del m\u00e9todo 'establecerAtributo' en el espacio de nombre 'utiles', debe ser de tipo cadena.";
+
+        if (typeof valor !== 'string')
+            throw "El par\u00e1metro 'valor' del m\u00e9todo 'establecerAtributo' en el espacio de nombre 'utiles', debe ser de tipo cadena.";
+        // fin { validaciones de parámetros }
+
+        if (this.existeElemento(id)) {
+            let elemento = document.getElementById(id);
+            elemento.setAttribute(atributo, valor);
+        } else
+            console.log("utiles.establecerAtributo(): El id '" + id + "' no existe.");
     },
     obtenerCadenaConsulta: function(objeto) {
         // https://howchoo.com/g/nwywodhkndm/how-to-turn-an-object-into-query-string-parameters-in-javascript
         return Object.keys(objeto).map(clave => clave + '=' + objeto[clave]).join('&');
     },
     peticion: function(metodo, url, params = null,
-            tipoContenido = 'application/x-www-form-urlencoded', 
+            tipoContenido = 'application/x-www-form-urlencoded',
             tipoRespuesta = 'json') {
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();

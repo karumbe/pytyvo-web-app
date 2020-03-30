@@ -58,7 +58,6 @@ abstract class ValidadorBaseComImpl extends ValidadorBase {
         } else
             $this->codigo = $codigo;
 
-
         if ($codigo < $minimo) {
             $this->error_codigo =
                 'Código: Debe ser mayor o igual a ' . $minimo . '.';

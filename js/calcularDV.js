@@ -2,12 +2,12 @@ let calcularDV = {
 
     calcular: function(numero, baseMax = 11) {
         if (typeof numero !== 'string')
-            throw "ERROR: El par\u00e1metro 'numero' del m\u00e9todo 'calcular' en el espacio de nombre 'calcularDV', debe ser de tipo cadena.";
+            throw "El par\u00e1metro 'numero' del m\u00e9todo 'calcular' en el espacio de nombre 'calcularDV', debe ser de tipo cadena.";
 
         numero = numero.trim();
 
         if (numero.length === 0 || numero === '')
-            throw "ERROR: El par\u00e1metro 'numero' del m\u00e9todo 'calcular' en el espacio de nombre 'calcularDV', no puede estar en blanco.";
+            throw "El par\u00e1metro 'numero' del m\u00e9todo 'calcular' en el espacio de nombre 'calcularDV', no puede estar en blanco.";
 
         let numeroAl, caracter, codigo, k, total, numeroAux, resto, digito;
 

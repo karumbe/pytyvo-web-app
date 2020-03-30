@@ -36,6 +36,7 @@ class Familia extends ModeloBase {
     * @param boolean $vigente
     * Vigencia del registro.
     */
+    # @Override
     public function __construct($codigo = 0, $nombre = '',
             $p1 = 0, $p2 = 0, $p3 = 0, $p4 = 0, $p5 = 0, $vigente = false) {
         parent::__construct($codigo, $nombre, $vigente);

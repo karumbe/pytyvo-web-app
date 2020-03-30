@@ -1,0 +1,64 @@
+
+<input type="hidden" name="codigo"
+    value="<?php echo $modelo->obtener_codigo(); ?>">
+
+<div class="form-group">
+    <label for="maquina">Máquina</label>
+    <select class="form-control text-uppercase" id="maquina"
+            name="maquina" required
+            <?php echo (defined('ESTA_RELACIONADO') && ESTA_RELACIONADO) ?
+                'disabled' : 'autofocus'; ?>>
+        <option value="0"></option>
+        <?php
+        foreach ($maquinas as $maquina) {
+            ?>
+            <option value="<?php echo $maquina->obtener_codigo(); ?>"<?php if ($maquina->obtener_codigo() === $modelo->obtener_maquina()) echo ' selected'; ?>><?php echo htmlspecialchars($maquina->obtener_nombre(), ENT_QUOTES); ?></option>
+            <?php
+        }
+        ?>
+    </select>
+    <div class="alert alert-danger alerta-peligro" role="alert"
+        id="error-maquina">
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="marca">Marca</label>
+    <select class="form-control text-uppercase" id="marca"
+            name="marca" required
+            <?php if (defined('ESTA_RELACIONADO') && ESTA_RELACIONADO)
+                echo 'disabled'; ?>>
+        <option value="0"></option>
+        <?php
+        foreach ($marcas as $marca) {
+            ?>
+            <option value="<?php echo $marca->obtener_codigo(); ?>"<?php if ($marca->obtener_codigo() === $modelo->obtener_marca()) echo ' selected'; ?>><?php echo htmlspecialchars($marca->obtener_nombre(), ENT_QUOTES); ?></option>
+            <?php
+        }
+        ?>
+    </select>
+    <div class="alert alert-danger alerta-peligro" role="alert"
+        id="error-marca">
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control text-uppercase" id="nombre"
+        name="nombre" minlength="3" maxlength="30"
+        value="<?php echo $modelo->obtener_nombre(); ?>" required
+        <?php if (defined('ESTA_RELACIONADO') && ESTA_RELACIONADO)
+            echo 'readonly'; ?>>
+    <div class="alert alert-danger alerta-peligro" role="alert"
+        id="error-nombre">
+    </div>
+</div>
+
+<div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input" id="vigente"
+        name="vigente"
+        <?php if ($modelo->esta_vigente()) echo 'checked'; ?>
+        <?php if (defined('ESTA_RELACIONADO') && ESTA_RELACIONADO)
+            echo 'autofocus'; ?>>
+    <label class="form-check-label" for="vigente">Vigente</label>
+</div>

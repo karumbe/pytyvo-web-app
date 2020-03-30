@@ -1,0 +1,41 @@
+        <script src="<?php echo RUTA_JS ?>utiles.js"></script>
+        <script src="<?php echo RUTA_JS ?>modeloValidador.js"></script>
+        <script>
+            (function() {
+                if (document.getElementById('error-maquina').innerHTML.trim() !== '')
+                    utiles.mostrarElemento('error-maquina');
+
+                if (document.getElementById('error-marca').innerHTML.trim() !== '')
+                    utiles.mostrarElemento('error-marca');
+
+                if (document.getElementById('error-nombre').innerHTML.trim() !== '')
+                    utiles.mostrarElemento('error-nombre');
+
+            })();
+
+            const config = {
+                ajax: '<?php echo SERVIDOR; ?>' + '/ajax/',
+                modulo: 'modelo'
+            }
+
+            /*
+            $('select').select2({
+                language: 'es',
+                theme: 'bootstrap4'
+            });
+            */
+
+            $('#maquina').select2({
+                language: 'es',
+                theme: 'bootstrap4'
+            });
+
+            $('#marca').select2({
+                language: 'es',
+                theme: 'bootstrap4'
+            });
+
+            $(window).resize(function() {
+                $('.select2').css('width', '100%');
+            });
+        </script>

@@ -108,6 +108,39 @@ abstract class DaoBaseComImpl extends DaoBase {
     }
 
     /**
+    * Verifica si un código está vigente.
+    *
+    * @param integer $codigo
+    * Código a ser verificado.
+    *
+    * @return boolean
+    * true si ésta vigente y false si no lo está u ocurre un error.
+    */
+    public function esta_vigente($codigo) {
+        # inicio { validación del parámetro }
+        if (!$this->validar_param_codigo($codigo)) {
+            return false;
+        }
+        # fin { validación del parámetro }
+
+        $esta_vigente = false;
+
+        try {
+            $this->conectar();
+
+            if (isset($this->conexion)) {
+                $esta_vigente = $this->conexion->EstaVigente($codigo);
+            }
+        } catch (Exception $ex) {
+            print 'ERROR: ' . $ex->getMessage() . '<br>';
+        }
+
+        $this->desconectar();
+
+        return $esta_vigente;
+    }
+
+    /**
     * Realiza una búsqueda por codigo.
     *
     * @param integer $codigo
@@ -212,7 +245,11 @@ abstract class DaoBaseComImpl extends DaoBase {
             $this->conectar();
 
             if (isset($this->conexion)) {
-                $resultado = $this->conexion->ObtenerTodos();
+                if (is_null($condicion_filtrado))
+                    $resultado = $this->conexion->ObtenerTodos();
+                else
+                    $resultado = $this->conexion->ObtenerTodos(
+                        $condicion_filtrado);
 
                 if ($xml = simplexml_load_string($resultado)) {
                     foreach ($xml as $fila) {

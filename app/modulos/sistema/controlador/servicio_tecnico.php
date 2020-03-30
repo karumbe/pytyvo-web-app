@@ -13,9 +13,10 @@ define('PUEDE_ACCEDER_MAQUINA',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'maquina'));
 define('PUEDE_ACCEDER_MARCA_OT',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'marca_ot'));
+
+define('PUEDE_ACCEDER_MODELO',
+    Seguridad::puede_acceder($_SESSION['cod_usuario'], 'modelo'));
 /*
-define('PUEDE_ACCEDER_SUBRUBRO',
-    Seguridad::puede_acceder($_SESSION['cod_usuario'], 'subrubro'));
 define('PUEDE_ACCEDER_MARCA',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'marca'));
 define('PUEDE_ACCEDER_UNIDAD_MEDIDA',

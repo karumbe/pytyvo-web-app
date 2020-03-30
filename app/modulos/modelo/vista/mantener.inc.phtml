@@ -1,0 +1,96 @@
+
+<div class="container" style="margin-top: 90px;">
+    <div class="row">
+        <div class="col-md-6 card p-0 mx-auto">
+            <div class="card-header text-uppercase">
+                <?php echo Utiles::obtener_titulo($peticion, $modulo); ?>
+            </div>
+            <div class="card-body">
+                <?php
+                # inicio { excepción sql }
+                /*
+                if (isset($_POST['request']) && isset($response)) {
+                    $sql_exception = $entity_repository::get_sql_exception();
+
+                    if (isset($sql_exception)) {
+                        ?>
+                        <div class="alert alert-info" role="alert">
+                            <?php echo $sql_exception; ?>
+                        </div>
+                        <?php
+                    }
+                }
+                */
+                # fin { excepción sql }
+                ?>
+                <form class="form" role="form" autocomplete="off" method="post"
+                        enctype="application/x-www-form-urlencoded"
+                        action="<?php
+                            echo $peticion !== 'leer' ? RUTA_MANTENER : '#';
+                        ?>"
+                        onsubmit="<?php
+                            echo $peticion !== 'borrar' ? 'return modeloValidador.validar();' : '';
+                        ?>">
+
+                    <input type="hidden" name="token_autenticidad"
+                        value="<?php echo $_SESSION['token']; ?>">
+
+                    <input type="hidden" name="accion_solicitada"
+                        value="<?php echo $peticion; ?>">
+
+                    <?php
+                        # Carga el contenido del formulario.
+                        if ((isset($modelo) && is_object($modelo)) ||
+                                $peticion === 'crear')
+                            include_once 'contenido.inc.phtml';
+                        else {
+                        ?>
+                            <p class="text-danger">
+                                <b>ERROR:</b> El objeto 'modelo' no existe.
+                            </p>
+                        <?php
+                        }
+                    ?>
+
+                    <div class="float-right">
+                        <?php
+                        # inicio { submit }
+                        if ($peticion !== 'leer') {
+                            ?>
+                            <button
+                                type="submit"
+                                class="<?php
+                                    echo Utiles::obtener_clase_boton_submit($peticion);
+                                ?>"
+                                name="peticion"
+                                title="<?php
+                                    echo Utiles::obtener_titulo_boton_submit($peticion);
+                                ?>">
+                                <?php
+                                    echo Utiles::obtener_texto_boton_submit($peticion);
+                                ?>
+                            </button>
+                            <?php
+                        }
+                        # fin { submit }
+                        ?>
+
+                        <!-- inicio { cancelar } -->
+                        <a
+                            href="<?php echo RUTA_ADMINISTRAR; ?>"
+                            class="btn btn-outline-secondary btn-md"
+                            role="button"
+                            title="<?php
+                                echo Utiles::obtener_titulo_boton_cancelar($peticion);
+                            ?>">
+                            <?php
+                                echo Utiles::obtener_texto_boton_cancelar($peticion);
+                            ?>
+                        </a>
+                        <!-- fin { cancelar } -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

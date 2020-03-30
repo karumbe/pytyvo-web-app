@@ -56,7 +56,7 @@ const unidadMedidaValidador = {
             return 'El código debe ser mayor o igual a cero.';
 
         if (codigo > 9999)
-            return 'El código debe ser menor a 10 mil.';
+            return 'El código debe ser menor a diez mil.';
 
         this._codigo = codigo;
 

@@ -26,6 +26,10 @@ define('PUEDE_ACCEDER_UNIDAD_MEDIDA',
 # Inicio > Definiciones > Servicio técnico
 define('PUEDE_ACCEDER_MAQUINA',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'maquina'));
+define('PUEDE_ACCEDER_MARCA_OT',
+    Seguridad::puede_acceder($_SESSION['cod_usuario'], 'marca_ot'));
+define('PUEDE_ACCEDER_MODELO',
+    Seguridad::puede_acceder($_SESSION['cod_usuario'], 'modelo'));
 # Inicio > Definiciones > Servicio técnico
 
 # fin { establece el acceso a los módulos }

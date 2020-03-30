@@ -1,0 +1,53 @@
+
+<input type="hidden" name="codigo" value="0">
+
+<div class="form-group">
+    <label for="maquina">Máquina</label>
+    <select class="form-control text-uppercase" id="maquina"
+            name="maquina" required autofocus>
+        <option value="0" selected></option>
+        <?php
+        foreach ($maquinas as $maquina) {
+            ?>
+            <option value="<?php echo $maquina->obtener_codigo(); ?>"><?php echo htmlspecialchars($maquina->obtener_nombre(), ENT_QUOTES); ?></option>
+            <?php
+        }
+        ?>
+    </select>
+    <div class="alert alert-danger alerta-peligro" role="alert"
+        id="error-maquina">
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="marca">Marca</label>
+    <select class="form-control text-uppercase" id="marca"
+            name="marca" required>
+        <option value="0" selected></option>
+        <?php
+        foreach ($marcas as $marca) {
+            ?>
+            <option value="<?php echo $marca->obtener_codigo(); ?>"><?php echo htmlspecialchars($marca->obtener_nombre(), ENT_QUOTES); ?></option>
+            <?php
+        }
+        ?>
+    </select>
+    <div class="alert alert-danger alerta-peligro" role="alert"
+        id="error-marca">
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control text-uppercase" id="nombre"
+        name="nombre" minlength="3" maxlength="30" value="" required>
+    <div class="alert alert-danger alerta-peligro" role="alert"
+        id="error-nombre">
+    </div>
+</div>
+
+<div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input" id="vigente"
+        name="vigente" checked>
+    <label class="form-check-label" for="vigente">Vigente</label>
+</div>

@@ -36,6 +36,8 @@ define('RUTA_ADMINISTRAR_MAQUINA', SERVIDOR . '/administrar-maquina');
 define('RUTA_MANTENER_MAQUINA', SERVIDOR . '/mantener-maquina');
 define('RUTA_ADMINISTRAR_MARCA_OT', SERVIDOR . '/administrar-marca-ot');
 define('RUTA_MANTENER_MARCA_OT', SERVIDOR . '/mantener-marca-ot');
+define('RUTA_ADMINISTRAR_MODELO', SERVIDOR . '/administrar-modelo');
+define('RUTA_MANTENER_MODELO', SERVIDOR . '/mantener-modelo');
 
 // Recursos.
 define('RUTA_CSS', SERVIDOR . '/css/');
@@ -46,4 +48,5 @@ define('RUTA_POPPER', SERVIDOR . '/static/popper/');
 define('RUTA_BOOTSTRAP', SERVIDOR . '/static/bootstrap/');
 define('RUTA_FONTAWESOME', SERVIDOR . '/static/fontawesome/');
 define('RUTA_FONTS', SERVIDOR . '/static/fonts/');
+define('RUTA_SELECT2', SERVIDOR . '/static/select2/');
 ?>
