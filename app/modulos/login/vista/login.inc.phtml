@@ -26,8 +26,12 @@
                     </div>
 
                     <?php
-                    if (isset($_POST['login'])) {
+                    if (isset($_POST['login']))
                         $validador->mostrar_error();
+                    else {
+                        ?>
+                        <div class="alert alert-danger alerta-peligro" role="alert" id="error-login"></div>
+                        <?php
                     }
                     ?>
 
@@ -38,7 +42,7 @@
     </div>
     <div class="row mt-3">
         <div class="col-md-12 text-center">
-            <p>&#169; 2000-2019, Turtle Software Paraguay</p>
+            <p>&#169; 2000-2020, Turtle Software Paraguay</p>
         </div>
     </div>
 </div>

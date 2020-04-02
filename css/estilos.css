@@ -1,12 +1,12 @@
 body {
     /**
-    * La imagen se fija en la ventana de visualización para que la altura de 
+    * La imagen se fija en la ventana de visualización para que la altura de
     * la imagen no supere a la del contenido.
     */
     background-attachment: fixed;
     /**
-    * Se muestra un color de fondo mientras se está cargando la imagen de 
-    * fondo o si hay problemas para cargarla. 
+    * Se muestra un color de fondo mientras se está cargando la imagen de
+    * fondo o si hay problemas para cargarla.
     */
     background-color: #e9ebee;
     /* Ubicación de la imágen. */
@@ -16,8 +16,8 @@ body {
     /* Para que la imagen no se repita. */
     background-repeat: no-repeat;
     /**
-    * La imagen de fondo se reescala automáticamente con el cambio del ancho 
-    * de ventana del navegador. 
+    * La imagen de fondo se reescala automáticamente con el cambio del ancho
+    * de ventana del navegador.
     */
     background-size: cover;
     /* Define una lista de fuentes o familias de fuentes. */

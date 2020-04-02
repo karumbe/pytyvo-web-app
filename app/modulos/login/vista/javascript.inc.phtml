@@ -1,0 +1,12 @@
+        <script src="<?php echo RUTA_JS ?>utiles.js"></script>
+        <script>
+            (function() {
+                if (document.getElementById('error-login').innerHTML.trim() !== '')
+                    utiles.mostrarElemento('error-login');
+            })();
+
+            const config = {
+                ajax: '<?php echo SERVIDOR; ?>' + '/ajax/',
+                modulo: 'login'
+            }
+        </script>

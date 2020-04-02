@@ -37,6 +37,12 @@ if ($partes_ruta[0] == 'pytyvo') {
             case 'mantener-maquina':
                 $ruta_elegida = 'app/modulos/maquina/controlador/mantener.php';
                 break;
+            case 'administrar-estado-ot':
+                $ruta_elegida = 'app/modulos/estado_ot/controlador/administrar.php';
+                break;
+            case 'mantener-estado-ot':
+                $ruta_elegida = 'app/modulos/estado_ot/controlador/mantener.php';
+                break;
             case 'administrar-familia':
                 $ruta_elegida = 'app/modulos/familia/controlador/administrar.php';
                 break;
@@ -92,7 +98,7 @@ if ($partes_ruta[0] == 'pytyvo') {
                 $ruta_elegida = 'app/modulos/sistema/controlador/inventario.php';
                 break;
             case 'socio-de-negocio':
-                $ruta_elegida = 'app/modulos/sistema/controlador/socio-de-negocio.php';
+                $ruta_elegida = 'app/modulos/sistema/controlador/socio_de_negocio.php';
                 break;
         }
     } else if (count($partes_ruta) == 3) {
@@ -140,6 +146,15 @@ if ($partes_ruta[0] == 'pytyvo') {
                         $pagina = (int) $partes_ruta[3];
                         $ruta_elegida =
                             'app/modulos/maquina/controlador/administrar.php';
+                        break;
+                    }
+                break;
+            case 'administrar-estado-ot':
+                switch ($partes_ruta[2]) {
+                    case 'pagina':
+                        $pagina = (int) $partes_ruta[3];
+                        $ruta_elegida =
+                            'app/modulos/estado_ot/controlador/administrar.php';
                         break;
                     }
                 break;

@@ -34,6 +34,6 @@ $titulo = 'Bienvenido';
 include_once 'plantillas/documento_declaracion.inc.phtml';
 include_once dirname(__DIR__) . '/vista/login.inc.phtml';
 include_once 'plantillas/documento_pie.inc.phtml';
-include_once 'plantillas/documento_javascript.inc.phtml';
+include_once dirname(__DIR__) . '/vista/javascript.inc.phtml';
 include_once 'plantillas/documento_cierre.inc.phtml';
 ?>

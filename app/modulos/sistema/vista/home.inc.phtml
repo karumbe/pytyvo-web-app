@@ -23,7 +23,14 @@
                             <li class="list-group-item"><a href="#">General</a></li>
                             <li class="list-group-item"><a href="#">Finanzas</a></li>
                             <li class="list-group-item"><a href="#">Compras</a></li>
-                            <li class="list-group-item"><a href="<?php echo RUTA_SOCIO_NEGOCIO; ?>">Socios de negocios</a></li>
+
+                            <?php
+                            if (PUEDE_ACCEDER_MOTIVO_CLIE) {
+                                ?>
+                                <li class="list-group-item"><a href="<?php echo RUTA_SOCIO_NEGOCIO; ?>">Socios de negocios</a></li>
+                                <?php
+                            }
+                            ?>
 
                             <?php
                             if (PUEDE_ACCEDER_FAMILIA ||

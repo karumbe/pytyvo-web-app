@@ -38,6 +38,8 @@ define('RUTA_ADMINISTRAR_MARCA_OT', SERVIDOR . '/administrar-marca-ot');
 define('RUTA_MANTENER_MARCA_OT', SERVIDOR . '/mantener-marca-ot');
 define('RUTA_ADMINISTRAR_MODELO', SERVIDOR . '/administrar-modelo');
 define('RUTA_MANTENER_MODELO', SERVIDOR . '/mantener-modelo');
+define('RUTA_ADMINISTRAR_ESTADO_OT', SERVIDOR . '/administrar-estado-ot');
+define('RUTA_MANTENER_ESTADO_OT', SERVIDOR . '/mantener-estado-ot');
 
 // Recursos.
 define('RUTA_CSS', SERVIDOR . '/css/');

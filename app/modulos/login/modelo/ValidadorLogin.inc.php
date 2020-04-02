@@ -77,7 +77,7 @@ class ValidadorLogin {
     */
     public function mostrar_error() {
         if ($this->error !== '') {
-            echo '<div class="alert alert-danger" role="alert" style="border-radius: 5px; font-size: 0.8rem; margin-top: 0.5rem; padding: 0.2rem;">';
+            echo '<div class="alert alert-danger alerta-peligro" role="alert" id="error-login">';
             echo $this->error;
             echo '</div>';
         }

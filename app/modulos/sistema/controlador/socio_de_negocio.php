@@ -9,7 +9,7 @@ if (!ControlSesion::sesion_iniciada())
     Redireccion::redirigir(RUTA_LOGIN);
 
 # inicio { establece el acceso a los módulos }
-define('MOTIVO_CLIE',
+define('PUEDE_ACCEDER_MOTIVO_CLIE',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'motivo_clie'));
 # fin { establece el acceso a los módulos }
 
@@ -17,7 +17,7 @@ $titulo = 'Socios de negocios';
 
 include_once 'plantillas/documento_declaracion.inc.phtml';
 include_once 'plantillas/navbar.inc.phtml';
-include_once dirname(__DIR__) . '/vista/socio-de-negocio.inc.phtml';
+include_once dirname(__DIR__) . '/vista/socio_de_negocio.inc.phtml';
 include_once 'plantillas/documento_pie.inc.phtml';
 include_once 'plantillas/documento_javascript.inc.phtml';
 include_once 'plantillas/documento_cierre.inc.phtml';
