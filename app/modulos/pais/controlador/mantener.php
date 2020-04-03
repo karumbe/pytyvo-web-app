@@ -4,19 +4,19 @@ include_once 'app/nucleo/Utiles.inc.php';
 include_once 'app/nucleo/ControlSesion.inc.php';
 include_once 'app/nucleo/Redireccion.inc.php';
 include_once 'app/nucleo/Seguridad.inc.php';
-include_once dirname(__DIR__) . '/modelo/UnidadMedida.inc.php';
-include_once dirname(__DIR__) . '/modelo/UnidadMedidaDaoFactory.inc.php';
-include_once dirname(__DIR__) . '/modelo/UnidadMedidaValidador.inc.php';
+include_once dirname(__DIR__) . '/modelo/Pais.inc.php';
+include_once dirname(__DIR__) . '/modelo/PaisDaoFactory.inc.php';
+include_once dirname(__DIR__) . '/modelo/PaisValidador.inc.php';
 
 # inicio { declaración e inicialización de variables y constantes }
-$entidad = 'UnidadMedida';
+$entidad = 'Pais';
 $entidad_repositorio = $entidad . 'DaoFactory';
 $entidad_validador = $entidad . 'Validador';
-$modulo = 'Unidad de medida';
+$modulo = 'País';
 
-define('MODULO', 'unidad');
-define('RUTA_ADMINISTRAR', RUTA_ADMINISTRAR_UNIDAD_MEDIDA);
-define('RUTA_MANTENER', RUTA_MANTENER_UNIDAD_MEDIDA);
+define('MODULO', 'pais');
+define('RUTA_ADMINISTRAR', RUTA_ADMINISTRAR_PAIS);
+define('RUTA_MANTENER', RUTA_MANTENER_PAIS);
 # fin { declaración e inicialización de variables y constantes }
 
 $peticion = Utiles::obtener_peticion();
@@ -63,9 +63,6 @@ if (isset($_POST['peticion'])) {
         $modelo = new $entidad(
             (int) $_POST['codigo'],
             (string) $_POST['nombre'],
-            (string) $_POST['simbolo'],
-            (boolean) isset($_POST['divisible']) &&
-                $_POST['divisible'] === 'on' ? true : false,
             (boolean) isset($_POST['vigente']) &&
                 $_POST['vigente'] === 'on' ? true : false
         );
@@ -83,8 +80,6 @@ if (isset($_POST['peticion'])) {
             if (!is_null($modelo) && !is_null($dto)) {
                 $dto->EstablecerCodigo($modelo->obtener_codigo());
                 $dto->EstablecerNombre(utf8_decode($modelo->obtener_nombre()));
-                $dto->EstablecerSimbolo(utf8_decode($modelo->obtener_simbolo()));
-                $dto->EstablecerDivisible($modelo->es_divisible());
                 $dto->EstablecerVigente($modelo->esta_vigente());
 
                 # Realiza la acción de crear o actualizar un registro.

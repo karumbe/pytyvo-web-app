@@ -25,7 +25,8 @@
                             <li class="list-group-item"><a href="#">Compras</a></li>
 
                             <?php
-                            if (PUEDE_ACCEDER_MOTIVO_CLIE) {
+                            if (PUEDE_ACCEDER_PAIS ||
+                                    PUEDE_ACCEDER_MOTIVO_CLIE) {
                                 ?>
                                 <li class="list-group-item"><a href="<?php echo RUTA_SOCIO_NEGOCIO; ?>">Socios de negocios</a></li>
                                 <?php

@@ -15,6 +15,14 @@
             <li class="list-group-item bg-trans-dark">Socios de negocios</li>
 
             <?php
+            if (PUEDE_ACCEDER_PAIS) {
+                ?>
+                <li class="list-group-item"><a href="<?php echo RUTA_ADMINISTRAR_PAIS; ?>">Países</a></li>
+                <?php
+            }
+            ?>
+
+            <?php
             if (PUEDE_ACCEDER_MOTIVO_CLIE) {
                 ?>
                 <li class="list-group-item"><a href="<?php echo RUTA_ADMINISTRAR_MOTIVO_CLIE; ?>">Motivos de ser cliente</a></li>

@@ -159,3 +159,14 @@ input[type=number] {
 .texto-buscador {
     padding-right: 0px;
 }
+
+/**
+* https://phpmaker.dev/demo.php
+* http://hkvstore.com/phpdemo2020/employeesadd.php
+*/
+.ew-required {
+    color: #dc3545;
+    font-size: 50%;
+    margin-left: .5em;
+    vertical-align: super;
+}

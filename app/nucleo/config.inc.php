@@ -14,6 +14,8 @@ define('RUTA_CLIENTE', SERVIDOR . '/cliente');
 
 # Inicio > Definiciones > Socios de negocios
 define('RUTA_SOCIO_NEGOCIO', SERVIDOR . '/socio-de-negocio');
+define('RUTA_ADMINISTRAR_PAIS', SERVIDOR . '/administrar-pais');
+define('RUTA_MANTENER_PAIS', SERVIDOR . '/mantener-pais');
 define('RUTA_ADMINISTRAR_MOTIVO_CLIE', SERVIDOR . '/administrar-motivo-ser-cliente');
 define('RUTA_MANTENER_MOTIVO_CLIE', SERVIDOR . '/mantener-motivo-ser-cliente');
 

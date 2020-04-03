@@ -4,22 +4,22 @@ include_once 'app/nucleo/Utiles.inc.php';
 include_once 'app/nucleo/ControlSesion.inc.php';
 include_once 'app/nucleo/Redireccion.inc.php';
 include_once 'app/nucleo/Seguridad.inc.php';
-include_once dirname(__DIR__) . '/modelo/UnidadMedidaDaoFactory.inc.php';
+include_once dirname(__DIR__) . '/modelo/PaisDaoFactory.inc.php';
 
 # inicio { declaración e inicialización de variables y constantes }
-$entidad = 'UnidadMedida';
+$entidad = 'Pais';
 $entidad_repositorio = $entidad . 'DaoFactory';
 $entidad_buscar = strtolower($entidad) . '_buscar';
 $entidad_pagina = strtolower($entidad) . '_pagina';
-$titulo = 'Gestión de unidades de medida';
+$titulo = 'Gestión de países';
 
-define('MODULO', 'unidad');
+define('MODULO', 'pais');
 define('PUEDE_MODIFICAR',
     Seguridad::puede_modificar($_SESSION['cod_usuario'], MODULO));
 define('PUEDE_BORRAR',
     Seguridad::puede_borrar($_SESSION['cod_usuario'], MODULO));
-define('RUTA_ADMINISTRAR', RUTA_ADMINISTRAR_UNIDAD_MEDIDA);
-define('RUTA_MANTENER', RUTA_MANTENER_UNIDAD_MEDIDA);
+define('RUTA_ADMINISTRAR', RUTA_ADMINISTRAR_PAIS);
+define('RUTA_MANTENER', RUTA_MANTENER_PAIS);
 # fin { declaración e inicialización de variables y constantes }
 
 # inicio { seguridad del sistema }

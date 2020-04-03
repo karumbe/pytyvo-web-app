@@ -166,7 +166,7 @@ class PermisoDaoComImpl extends DaoBaseComImpl {
     * Devuelve true si la variable es válida y false en caso contrario.
     */
     protected function validar_param_modulo($valor) {
-        return Utiles::longitud_texto($valor, 5, 12);
+        return Utiles::longitud_texto($valor, 4, 12);
     }
 
 }
