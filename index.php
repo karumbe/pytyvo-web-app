@@ -76,6 +76,12 @@ if ($partes_ruta[0] == 'pytyvo') {
             case 'mantener-motivo-ser-cliente':
                 $ruta_elegida = 'app/modulos/motivo_clie/controlador/mantener.php';
                 break;
+            case 'administrar-motivo-nota-debito-credito':
+                $ruta_elegida = 'app/modulos/motivo_no/controlador/administrar.php';
+                break;
+            case 'mantener-motivo-nota-debito-credito':
+                $ruta_elegida = 'app/modulos/motivo_no/controlador/mantener.php';
+                break;
             case 'administrar-pais':
                 $ruta_elegida = 'app/modulos/pais/controlador/administrar.php';
                 break;
@@ -114,10 +120,16 @@ if ($partes_ruta[0] == 'pytyvo') {
         switch ($partes_ruta[1]) {
             case 'ajax':
                 switch ($partes_ruta[2]) {
-                    case 'motivo-clie-nombre-existe':
+                    case 'maquina-obtener-todos-vigente':
+                        $ruta_elegida = 'app/modulos/ajax/maquina_obtener_todos_vigente.php';
+                        break;
+                    case 'marca-ot-obtener-todos-vigente':
+                        $ruta_elegida = 'app/modulos/ajax/marca_ot_obtener_todos_vigente.php';
+                        break;
+                    case 'motivo-ser-cliente-nombre-existe':
                         $ruta_elegida = 'app/modulos/ajax/motivo_clie_nombre_existe.php';
                         break;
-                    case 'motivo-clie-obtener-todos-vigente':
+                    case 'motivo-ser-cliente-obtener-todos-vigente':
                         $ruta_elegida = 'app/modulos/ajax/motivo_clie_obtener_todos_vigente.php';
                         break;
                 }
@@ -203,12 +215,21 @@ if ($partes_ruta[0] == 'pytyvo') {
                         break;
                     }
                 break;
-            case 'administrar-motivo-clie':
+            case 'administrar-motivo-ser-cliente':
                 switch ($partes_ruta[2]) {
                     case 'pagina':
                         $pagina = (int) $partes_ruta[3];
                         $ruta_elegida =
                             'app/modulos/motivo_clie/controlador/administrar.php';
+                        break;
+                    }
+                break;
+            case 'administrar-motivo-nota-debito-credito':
+                switch ($partes_ruta[2]) {
+                    case 'pagina':
+                        $pagina = (int) $partes_ruta[3];
+                        $ruta_elegida =
+                            'app/modulos/motivo_no/controlador/administrar.php';
                         break;
                     }
                 break;

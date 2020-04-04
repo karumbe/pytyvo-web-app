@@ -29,18 +29,22 @@ if (is_null($repositorio)) {
                                        'mensaje' => HTTP_503_SERVICIO_NO_DISPONIBLE));
     die(json_encode($respuesta));
 }
-
-if (!isset($_POST['nombre'])) {
-    $respuesta = array('info' => array('ok' => false,
-                                       'estado' => 'fallo',
-                                       'mensaje' => ERROR_1229));
-    die(json_encode($respuesta));
-}
 # fin { validaciones }
 
-$nombre_existe = $repositorio->nombre_existe($_POST['nombre']);
+$motivos_clientes = array();
+$filas = $repositorio->obtener_todos('vigente');
+
+foreach ($filas as $fila) {
+    $motivos_clientes[] = array('codigo' => (int) $fila->obtener_codigo(),
+                                'nombre' => (string) $fila->obtener_nombre(),
+                                'vigente' => (bool) $fila->esta_vigente());
+}
+
 $respuesta = array('info' => array('ok' => true,
                                    'estado' => 'exito',
-                                   'mensaje' => $nombre_existe));
+                                   'resultados' => count($motivos_clientes),
+                                   'version' => '1.0'),
+                   'resultados' => $motivos_clientes);
+
 echo json_encode($respuesta);
 ?>

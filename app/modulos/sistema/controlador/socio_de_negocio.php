@@ -13,6 +13,8 @@ define('PUEDE_ACCEDER_PAIS',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'pais'));
 define('PUEDE_ACCEDER_MOTIVO_CLIE',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'motivo_clie'));
+define('PUEDE_ACCEDER_MOTIVO_NO',
+    Seguridad::puede_acceder($_SESSION['cod_usuario'], 'motivo_no'));
 # fin { establece el acceso a los módulos }
 
 $titulo = 'Socios de negocios';

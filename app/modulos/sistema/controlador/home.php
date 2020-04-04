@@ -15,6 +15,8 @@ define('PUEDE_ACCEDER_PAIS',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'pais'));
 define('PUEDE_ACCEDER_MOTIVO_CLIE',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'motivo_clie'));
+define('PUEDE_ACCEDER_MOTIVO_NO',
+    Seguridad::puede_acceder($_SESSION['cod_usuario'], 'motivo_no'));
 # Inicio > Definiciones > Socios de negocios
 
 # Inicio > Definiciones > Inventario

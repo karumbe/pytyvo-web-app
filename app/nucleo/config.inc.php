@@ -12,12 +12,21 @@ define('RUTA_LOGIN', SERVIDOR . '/login');
 define('RUTA_LOGOUT', SERVIDOR . '/logout');
 define('RUTA_CLIENTE', SERVIDOR . '/cliente');
 
+# AJAX
+define('RUTA_AJAX', SERVIDOR . '/ajax');
+define('RUTA_MAQUINA_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/maquina-obtener-todos-vigente');
+define('RUTA_MARCA_OT_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/marca-ot-obtener-todos-vigente');
+define('RUTA_MOTIVO_CLIE_NOMBRE_EXISTE', RUTA_AJAX . '/motivo-ser-cliente-nombre-existe');
+define('RUTA_MOTIVO_CLIE_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/motivo-ser-cliente-obtener-todos-vigente');
+
 # Inicio > Definiciones > Socios de negocios
 define('RUTA_SOCIO_NEGOCIO', SERVIDOR . '/socio-de-negocio');
 define('RUTA_ADMINISTRAR_PAIS', SERVIDOR . '/administrar-pais');
 define('RUTA_MANTENER_PAIS', SERVIDOR . '/mantener-pais');
 define('RUTA_ADMINISTRAR_MOTIVO_CLIE', SERVIDOR . '/administrar-motivo-ser-cliente');
 define('RUTA_MANTENER_MOTIVO_CLIE', SERVIDOR . '/mantener-motivo-ser-cliente');
+define('RUTA_ADMINISTRAR_MOTIVO_NO', SERVIDOR . '/administrar-motivo-nota-debito-credito');
+define('RUTA_MANTENER_MOTIVO_NO', SERVIDOR . '/mantener-motivo-nota-debito-credito');
 
 # Inicio > Definiciones > Inventario
 define('RUTA_INVENTARIO', SERVIDOR . '/inventario');
@@ -53,4 +62,10 @@ define('RUTA_BOOTSTRAP', SERVIDOR . '/static/bootstrap/');
 define('RUTA_FONTAWESOME', SERVIDOR . '/static/fontawesome/');
 define('RUTA_FONTS', SERVIDOR . '/static/fonts/');
 define('RUTA_SELECT2', SERVIDOR . '/static/select2/');
+
+// Mensajes.
+define('ERROR_1229', 'Muy pocos argumentos.');
+define('HTTP_401_NO_AUTORIZADO', '401 No autorizado.');
+define('HTTP_403_PROHIBIDO', '403 Prohibido - No tiene permiso para acceder al recurso en este servidor.');
+define('HTTP_503_SERVICIO_NO_DISPONIBLE', '503 Servicio no disponible.');
 ?>
