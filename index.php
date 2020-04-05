@@ -70,6 +70,12 @@ if ($partes_ruta[0] == 'pytyvo') {
             case 'mantener-modelo':
                 $ruta_elegida = 'app/modulos/modelo/controlador/mantener.php';
                 break;
+            case 'administrar-moneda':
+                $ruta_elegida = 'app/modulos/moneda/controlador/administrar.php';
+                break;
+            case 'mantener-moneda':
+                $ruta_elegida = 'app/modulos/moneda/controlador/mantener.php';
+                break;
             case 'administrar-motivo-ser-cliente':
                 $ruta_elegida = 'app/modulos/motivo_clie/controlador/administrar.php';
                 break;
@@ -94,11 +100,14 @@ if ($partes_ruta[0] == 'pytyvo') {
             case 'mantener-rubro':
                 $ruta_elegida = 'app/modulos/rubro/controlador/mantener.php';
                 break;
-            case 'servicio-tecnico':
-                $ruta_elegida = 'app/modulos/sistema/controlador/servicio_tecnico.php';
+            case 'finanzas':
+                $ruta_elegida = 'app/modulos/sistema/controlador/finanzas.php';
                 break;
             case 'inventario':
                 $ruta_elegida = 'app/modulos/sistema/controlador/inventario.php';
+                break;
+            case 'servicio-tecnico':
+                $ruta_elegida = 'app/modulos/sistema/controlador/servicio_tecnico.php';
                 break;
             case 'socio-de-negocio':
                 $ruta_elegida = 'app/modulos/sistema/controlador/socio_de_negocio.php';

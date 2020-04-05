@@ -1,28 +1,29 @@
         <script src="<?php echo RUTA_JS ?>utiles.js"></script>
         <script src="<?php echo RUTA_JS ?>familiaValidador.js"></script>
         <script>
-            (function() {
-                if (document.getElementById('error-nombre').innerHTML.trim() !== '')
-                    utiles.mostrarElemento('error-nombre');
+            $(function() {
+                if ($('#error-nombre').length)
+                    if ($('#error-nombre').text().trim().length)
+                        $('#error-nombre').css('display', 'block');
 
-                if (document.getElementById('error-p1').innerHTML.trim() !== '')
-                    utiles.mostrarElemento('error-p1');
+                if ($('#error-p1').length)
+                    if ($('#error-p1').text().trim().length)
+                        $('#error-p1').css('display', 'block');
 
-                if (document.getElementById('error-p2').innerHTML.trim() !== '')
-                    utiles.mostrarElemento('error-p2');
+                if ($('#error-p2').length)
+                    if ($('#error-p2').text().trim().length)
+                        $('#error-p2').css('display', 'block');
 
-                if (document.getElementById('error-p3').innerHTML.trim() !== '')
-                    utiles.mostrarElemento('error-p3');
+                if ($('#error-p3').length)
+                    if ($('#error-p3').text().trim().length)
+                        $('#error-p3').css('display', 'block');
 
-                if (document.getElementById('error-p4').innerHTML.trim() !== '')
-                    utiles.mostrarElemento('error-p4');
+                if ($('#error-p4').length)
+                    if ($('#error-p4').text().trim().length)
+                        $('#error-p4').css('display', 'block');
 
-                if (document.getElementById('error-p5').innerHTML.trim() !== '')
-                    utiles.mostrarElemento('error-p5');
-            })();
-
-            const config = {
-                ajax: '<?php echo SERVIDOR; ?>' + '/ajax/',
-                modulo: 'familia'
-            }
+                if ($('#error-p5').length)
+                    if ($('#error-p5').text().trim().length)
+                        $('#error-p5').css('display', 'block');
+            });
         </script>

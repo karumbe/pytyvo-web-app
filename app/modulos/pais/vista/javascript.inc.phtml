@@ -1,13 +1,9 @@
         <script src="<?php echo RUTA_JS ?>utiles.js"></script>
         <script src="<?php echo RUTA_JS ?>validadorBase.js"></script>
         <script>
-            (function() {
-                if (document.getElementById('error-nombre').innerHTML.trim() !== '')
-                    utiles.mostrarElemento('error-nombre');
-            })();
-
-            const config = {
-                ajax: '<?php echo SERVIDOR; ?>' + '/ajax/',
-                modulo: 'pais'
-            }
+            $(function() {
+                if ($('#error-nombre').length)
+                    if ($('#error-nombre').text().trim().length)
+                        $('#error-nombre').css('display', 'block');
+            });
         </script>

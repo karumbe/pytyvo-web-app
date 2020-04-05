@@ -2,11 +2,6 @@
         <script src="<?php echo RUTA_JS ?>modeloValidador.js"></script>
         <script>
             $(function() {
-                const config = {
-                    ajax: '<?php echo SERVIDOR; ?>' + '/ajax/',
-                    modulo: 'modelo'
-                }
-
                 if ($('#error-maquina').length)
                     if ($('#error-maquina').text().trim().length)
                         $('#error-maquina').css('display', 'block');

@@ -1,0 +1,28 @@
+
+<!-- inicio { breadcrumb } -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?php echo SERVIDOR; ?>"><i class="fas fa-home"></i>&#160;Inicio</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo SERVIDOR; ?>">Definiciones</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Finanzas</li>
+    </ol>
+</nav>
+<!-- fin { breadcrumb } -->
+
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <ul class="list-group">
+            <li class="list-group-item bg-trans-dark">Finanzas</li>
+
+            <?php
+            if (PUEDE_ACCEDER_MONEDA) {
+                ?>
+                <li class="list-group-item"><a href="<?php echo RUTA_ADMINISTRAR_MONEDA; ?>">Monedas</a></li>
+                <?php
+            }
+            ?>
+
+        </ul>
+    </div>
+</div>
+

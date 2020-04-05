@@ -19,6 +19,11 @@ define('RUTA_MARCA_OT_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/marca-ot-obtener-tod
 define('RUTA_MOTIVO_CLIE_NOMBRE_EXISTE', RUTA_AJAX . '/motivo-ser-cliente-nombre-existe');
 define('RUTA_MOTIVO_CLIE_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/motivo-ser-cliente-obtener-todos-vigente');
 
+# Inicio > Definiciones > Finanzas
+define('RUTA_FINANZAS', SERVIDOR . '/finanzas');
+define('RUTA_ADMINISTRAR_MONEDA', SERVIDOR . '/administrar-moneda');
+define('RUTA_MANTENER_MONEDA', SERVIDOR . '/mantener-moneda');
+
 # Inicio > Definiciones > Socios de negocios
 define('RUTA_SOCIO_NEGOCIO', SERVIDOR . '/socio-de-negocio');
 define('RUTA_ADMINISTRAR_PAIS', SERVIDOR . '/administrar-pais');
