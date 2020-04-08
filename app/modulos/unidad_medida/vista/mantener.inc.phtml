@@ -32,8 +32,7 @@
                             echo $peticion !== 'borrar' ? 'return unidadMedidaValidador.validar();' : '';
                         ?>">
 
-                    <input type="hidden" name="token_autenticidad"
-                        value="<?php echo $_SESSION['token']; ?>">
+                    <?php Seguridad::token_csrf(); ?>
 
                     <input type="hidden" name="accion_solicitada"
                         value="<?php echo $peticion; ?>">

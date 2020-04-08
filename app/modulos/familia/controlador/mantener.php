@@ -28,6 +28,10 @@ if (empty($peticion))
 if (!ControlSesion::sesion_iniciada())
     Redireccion::redirigir(RUTA_LOGIN);
 
+if (isset($_POST['accion_solicitada']))
+    if (!Seguridad::validar_token_csrf())
+        Redireccion::redirigir(RUTA_ERROR_TOKEN_CSRF);
+
 switch ($peticion) {
     case 'crear':
         if (!Seguridad::puede_agregar($_SESSION['cod_usuario'], MODULO))
@@ -62,7 +66,7 @@ if (isset($_POST['peticion'])) {
         $bandera = $peticion === 'crear' ? 1 : 2;
         $modelo = new $entidad(
             (int) $_POST['codigo'],
-            (string) $_POST['nombre'],
+            (string) Utiles::limpiar_entrada($_POST['nombre']),
             (float) $_POST['p1'],
             (float) $_POST['p2'],
             (float) $_POST['p3'],

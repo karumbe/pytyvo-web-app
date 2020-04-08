@@ -10,7 +10,7 @@ if (isset($mensaje) && !empty($mensaje))
 <div class="form-group">
     <label for="nombre">Nombre</label>
     <input type="text" class="form-control text-uppercase" id="nombre"
-        value="<?php echo $modelo->obtener_nombre(); ?>" readonly>
+        value="<?php echo Utiles::escapar_salida($modelo->obtener_nombre()); ?>" readonly>
 </div>
 
 <div class="form-check mb-3">

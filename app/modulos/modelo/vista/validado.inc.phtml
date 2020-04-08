@@ -21,7 +21,7 @@ if ($validador->obtener_error_codigo() !== '') {
         <?php
         foreach ($maquinas as $maquina) {
             ?>
-            <option value="<?php echo $maquina->obtener_codigo(); ?>"<?php if ($maquina->obtener_codigo() === $validador->obtener_maquina()) echo ' selected'; ?>><?php echo htmlspecialchars($maquina->obtener_nombre(), ENT_QUOTES); ?></option>
+            <option value="<?php echo $maquina->obtener_codigo(); ?>"<?php if ($maquina->obtener_codigo() === $validador->obtener_maquina()) echo ' selected'; ?>><?php echo Utiles::escapar_salida($maquina->obtener_nombre()); ?></option>
             <?php
         }
         ?>
@@ -39,7 +39,7 @@ if ($validador->obtener_error_codigo() !== '') {
         <?php
         foreach ($marcas as $marca) {
             ?>
-            <option value="<?php echo $marca->obtener_codigo(); ?>"<?php if ($marca->obtener_codigo() === $validador->obtener_marca()) echo ' selected'; ?>><?php echo htmlspecialchars($marca->obtener_nombre(), ENT_QUOTES); ?></option>
+            <option value="<?php echo $marca->obtener_codigo(); ?>"<?php if ($marca->obtener_codigo() === $validador->obtener_marca()) echo ' selected'; ?>><?php echo Utiles::escapar_salida($marca->obtener_nombre()); ?></option>
             <?php
         }
         ?>

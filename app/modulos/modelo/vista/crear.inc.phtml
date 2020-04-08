@@ -9,7 +9,7 @@
         <?php
         foreach ($maquinas as $maquina) {
             ?>
-            <option value="<?php echo $maquina->obtener_codigo(); ?>"><?php echo htmlspecialchars($maquina->obtener_nombre(), ENT_QUOTES); ?></option>
+            <option value="<?php echo $maquina->obtener_codigo(); ?>"><?php echo Utiles::escapar_salida($maquina->obtener_nombre()); ?></option>
             <?php
         }
         ?>
@@ -27,7 +27,7 @@
         <?php
         foreach ($marcas as $marca) {
             ?>
-            <option value="<?php echo $marca->obtener_codigo(); ?>"><?php echo htmlspecialchars($marca->obtener_nombre(), ENT_QUOTES); ?></option>
+            <option value="<?php echo $marca->obtener_codigo(); ?>"><?php echo Utiles::escapar_salida($marca->obtener_nombre()); ?></option>
             <?php
         }
         ?>

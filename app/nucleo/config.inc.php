@@ -8,6 +8,7 @@ define('SERVIDOR', 'http://localhost/pytyvo');
 #define('SERVIDOR', 'https://comercios.karumbe.com.py/pytyvo');
 define('RUTA_403', SERVIDOR . '/403');
 define('RUTA_404', SERVIDOR . '/404');
+define('RUTA_ERROR_TOKEN_CSRF', SERVIDOR . '/error-token-csrf');
 define('RUTA_LOGIN', SERVIDOR . '/login');
 define('RUTA_LOGOUT', SERVIDOR . '/logout');
 define('RUTA_CLIENTE', SERVIDOR . '/cliente');

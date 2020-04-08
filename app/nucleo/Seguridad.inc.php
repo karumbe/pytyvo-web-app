@@ -1,4 +1,6 @@
 <?php
+require_once 'app/lib/hash_equals.inc.php';
+require_once 'app/lib/random.inc.php';
 include_once 'app/modulos/permiso/modelo/PermisoDaoFactory.inc.php';
 
 class Seguridad {
@@ -89,6 +91,35 @@ class Seguridad {
             $borrar = $repositorio->puede_borrar($usuario, $modulo);
 
         return $borrar;
+    }
+
+    /**
+    * Crea un token y lo almacena en la sesión actual.
+    *
+    * @return void
+    */
+    public static function token_csrf() {
+        if (isset($_SESSION['token_csrf']))
+            unset($_SESSION['token_csrf']);
+
+        $_SESSION['token_csrf'] = random_token();
+
+        echo '<input type="hidden" name="_token" value="' .
+            $_SESSION['token_csrf'] . '">';
+    }
+
+    /**
+    * Verifica si el token recibido por el método POST es válido.
+    *
+    * @return boolean
+    * true si es válido y false en caso contrario.
+    */
+    public static function validar_token_csrf() {
+        if (isset($_SESSION['token_csrf']) && isset($_POST['_token']))
+            if (hash_equals($_SESSION['token_csrf'], $_POST['_token']))
+                return true;
+
+        return false;
     }
 
 }

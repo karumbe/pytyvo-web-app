@@ -92,7 +92,7 @@
                             ?>
                             <tr>
                                 <td class="text-center"><?php echo $fila->obtener_codigo(); ?></td>
-                                <td><?php echo $fila->obtener_nombre(); ?></td>
+                                <td><?php echo Utiles::escapar_salida($fila->obtener_nombre()); ?></td>
                                 <td class="text-right"><?php echo $fila->obtener_p1(); ?></td>
                                 <td class="text-right"><?php echo $fila->obtener_p2(); ?></td>
                                 <td class="text-right"><?php echo $fila->obtener_p3(); ?></td>

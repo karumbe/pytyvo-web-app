@@ -12,7 +12,7 @@
         <?php
         foreach ($maquinas as $maquina) {
             ?>
-            <option value="<?php echo $maquina->obtener_codigo(); ?>"<?php if ($maquina->obtener_codigo() === $modelo->obtener_maquina()) echo ' selected'; ?>><?php echo htmlspecialchars($maquina->obtener_nombre(), ENT_QUOTES); ?></option>
+            <option value="<?php echo $maquina->obtener_codigo(); ?>"<?php if ($maquina->obtener_codigo() === $modelo->obtener_maquina()) echo ' selected'; ?>><?php echo Utiles::escapar_salida($maquina->obtener_nombre()); ?></option>
             <?php
         }
         ?>
@@ -32,7 +32,7 @@
         <?php
         foreach ($marcas as $marca) {
             ?>
-            <option value="<?php echo $marca->obtener_codigo(); ?>"<?php if ($marca->obtener_codigo() === $modelo->obtener_marca()) echo ' selected'; ?>><?php echo htmlspecialchars($marca->obtener_nombre(), ENT_QUOTES); ?></option>
+            <option value="<?php echo $marca->obtener_codigo(); ?>"<?php if ($marca->obtener_codigo() === $modelo->obtener_marca()) echo ' selected'; ?>><?php echo Utiles::escapar_salida($marca->obtener_nombre()); ?></option>
             <?php
         }
         ?>
@@ -46,7 +46,7 @@
     <label for="nombre">Nombre</label>
     <input type="text" class="form-control text-uppercase" id="nombre"
         name="nombre" minlength="3" maxlength="30"
-        value="<?php echo $modelo->obtener_nombre(); ?>" required
+        value="<?php echo Utiles::escapar_salida($modelo->obtener_nombre()); ?>" required
         <?php if (defined('ESTA_RELACIONADO') && ESTA_RELACIONADO)
             echo 'readonly'; ?>>
     <div class="alert alert-danger alerta-peligro" role="alert"

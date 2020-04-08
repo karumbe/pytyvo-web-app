@@ -157,7 +157,7 @@ class MonedaValidador extends ValidadorBaseComImpl {
     * Muestra el valor de la propiedad $simbolo.
     */
     public function mostrar_simbolo() {
-        echo 'value="' . $this->simbolo . '"';
+        echo 'value="' . Utiles::escapar_salida($this->simbolo) . '"';
     }
 
     /**

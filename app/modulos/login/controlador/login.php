@@ -12,8 +12,8 @@ if (ControlSesion::sesion_iniciada()) {
 
 if (isset($_POST['login'])) {
     $validador = new ValidadorLogin(
-        $_POST['nombre'],
-        $_POST['clave'],
+        Utiles::limpiar_entrada($_POST['nombre']),
+        Utiles::limpiar_entrada($_POST['clave']),
         $_POST['token']
     );
 

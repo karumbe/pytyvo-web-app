@@ -87,7 +87,7 @@
                             ?>
                             <tr>
                                 <td class="text-center"><?php echo $fila->obtener_codigo(); ?></td>
-                                <td><?php echo $fila->obtener_nombre(); ?></td>
+                                <td><?php echo Utiles::escapar_salida($fila->obtener_nombre()); ?></td>
                                 <td class="text-center"><?php echo ($fila->esta_vigente()) ? 'Sí' : 'No'; ?></td>
                                 <td class="text-right">
                                     <form method="post" action="<?php echo RUTA_MANTENER; ?>">

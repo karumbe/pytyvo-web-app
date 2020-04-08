@@ -72,9 +72,8 @@ class Utiles {
     public static function preparar_para_buscar($expresion) {
         $expresion = self::alltrim(self::upper($expresion));
 
-        if ($expresion !== '') {
+        if ($expresion !== '')
             $expresion = '%' . $expresion . '%';
-        }
 
         return $expresion;
     }
@@ -92,8 +91,8 @@ class Utiles {
     public static function variable_iniciada($variable) {
         if (isset($variable) && !empty($variable))
             return true;
-        else
-            return false;
+
+        return false;
     }
 
     /**
@@ -688,6 +687,64 @@ class Utiles {
         }
 
         echo $aviso;
+    }
+
+    /**
+    * Determina si una variable está definida y es de tipo texto.
+    *
+    * @param string $variable
+    * La variable a ser evaluada.
+    *
+    * @return boolean
+    * Devuelve true si la variable está definida y es de tipo texto, false
+    * en caso contrario.
+    */
+    public static function es_texto($variable) {
+        if (isset($variable))
+            if (gettype($variable) === 'string')
+                return true;
+
+        return false;
+    }
+
+    /**
+    * Filtra una variable con el filtro que se indique.
+    *
+    * Elimina etiquetas, opcionalmente elimina o codifica caracteres
+    * especiales.
+    *
+    * @param string $variable
+    * La cadena de caracteres a ser filtrada.
+    *
+    * @return string
+    * Devuelve una cadena de caracteres filtrada.
+    */
+    public static function limpiar_entrada($variable) {
+        if (!self::es_texto($variable))
+            return '';
+
+        $texto = htmlspecialchars_decode($variable, ENT_QUOTES);
+        //$texto = filter_var($texto, FILTER_SANITIZE_STRING);
+
+        return $texto;
+    }
+
+    /**
+    * Convierte caracteres especiales en entidades HTML.
+    *
+    * @param string $variable
+    * La cadena de caracteres a ser convertida.
+    *
+    * @return string
+    * Devuelve una cadena de caracteres convertida.
+    */
+    public static function escapar_salida($variable) {
+        if (!self::es_texto($variable))
+            return '';
+
+        $texto = htmlspecialchars($variable, ENT_QUOTES);
+
+        return $texto;
     }
 
 }

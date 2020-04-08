@@ -311,7 +311,7 @@ abstract class ValidadorBaseComImpl extends ValidadorBase {
     # @Override
     public function mostrar_nombre() {
         if ($this->nombre !== '')
-            echo 'value="' . $this->nombre . '"';
+            echo 'value="' . Utiles::escapar_salida($this->nombre) . '"';
     }
 
     /**

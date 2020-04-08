@@ -11,7 +11,7 @@ if (isset($mensaje) && !empty($mensaje))
     <label for="nombre" class="col-3 col-form-label">Nombre</label>
     <div class="col-9">
         <input type="text" class="form-control text-uppercase" id="nombre"
-            value="<?php echo $modelo->obtener_nombre(); ?>" readonly>
+            value="<?php echo Utiles::escapar_salida($modelo->obtener_nombre()); ?>" readonly>
     </div>
 </div>
 

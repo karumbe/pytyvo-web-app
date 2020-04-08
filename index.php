@@ -19,12 +19,6 @@ if ($partes_ruta[0] == 'pytyvo') {
         $ruta_elegida = 'app/modulos/sistema/controlador/home.php';
     } else if (count($partes_ruta) == 2) {
         switch($partes_ruta[1]) {
-            case '403':
-                $ruta_elegida = 'app/modulos/sistema/vista/403.phtml';
-                break;
-            case '404':
-                $ruta_elegida = 'app/modulos/sistema/vista/404.phtml';
-                break;
             case 'logout':
                 $ruta_elegida = 'app/nucleo/logout.php';
                 break;
@@ -99,6 +93,15 @@ if ($partes_ruta[0] == 'pytyvo') {
                 break;
             case 'mantener-rubro':
                 $ruta_elegida = 'app/modulos/rubro/controlador/mantener.php';
+                break;
+            case '403':
+                $ruta_elegida = 'app/modulos/sistema/vista/403.phtml';
+                break;
+            case '404':
+                $ruta_elegida = 'app/modulos/sistema/vista/404.phtml';
+                break;
+            case 'error-token-csrf':
+                $ruta_elegida = 'app/modulos/sistema/vista/error_token_csrf.phtml';
                 break;
             case 'finanzas':
                 $ruta_elegida = 'app/modulos/sistema/controlador/finanzas.php';

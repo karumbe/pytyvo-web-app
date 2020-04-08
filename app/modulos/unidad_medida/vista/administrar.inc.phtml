@@ -89,8 +89,8 @@
                             ?>
                             <tr>
                                 <td class="text-center"><?php echo $fila->obtener_codigo(); ?></td>
-                                <td><?php echo $fila->obtener_nombre(); ?></td>
-                                <td><?php echo $fila->obtener_simbolo(); ?></td>
+                                <td><?php echo Utiles::escapar_salida($fila->obtener_nombre()); ?></td>
+                                <td><?php echo Utiles::escapar_salida($fila->obtener_simbolo()); ?></td>
                                 <td class="text-center"><?php echo ($fila->es_divisible()) ? 'Sí' : 'No'; ?></td>
                                 <td class="text-center"><?php echo ($fila->esta_vigente()) ? 'Sí' : 'No'; ?></td>
                                 <td class="text-right">
