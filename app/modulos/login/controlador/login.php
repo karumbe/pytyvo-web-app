@@ -4,17 +4,20 @@ include_once 'app/nucleo/config.inc.php';
 include_once 'app/nucleo/Utiles.inc.php';
 include_once 'app/nucleo/ControlSesion.inc.php';
 include_once 'app/nucleo/Redireccion.inc.php';
+include_once 'app/nucleo/Seguridad.inc.php';
 include_once dirname(__DIR__) . '/modelo/ValidadorLogin.inc.php';
 
-if (ControlSesion::sesion_iniciada()) {
+if (ControlSesion::sesion_iniciada())
     Redireccion::redirigir(SERVIDOR);
-}
 
 if (isset($_POST['login'])) {
+    if (!Seguridad::validar_token_csrf())
+        Redireccion::redirigir(RUTA_ERROR_TOKEN_CSRF);
+
     $validador = new ValidadorLogin(
         Utiles::limpiar_entrada($_POST['nombre']),
         Utiles::limpiar_entrada($_POST['clave']),
-        $_POST['token']
+        random_token()
     );
 
     if ($validador->obtener_error() === '' &&
