@@ -25,6 +25,12 @@ if ($partes_ruta[0] == 'pytyvo') {
             case 'cliente':
                 $ruta_elegida = 'app/modulos/cliente/controlador/cliente.php';
                 break;
+            case 'administrar-depar':
+                $ruta_elegida = 'app/modulos/depar/controlador/administrar.php';
+                break;
+            case 'mantener-depar':
+                $ruta_elegida = 'app/modulos/depar/controlador/mantener.php';
+                break;
             case 'administrar-estado-ot':
                 $ruta_elegida = 'app/modulos/estado_ot/controlador/administrar.php';
                 break;
@@ -106,6 +112,9 @@ if ($partes_ruta[0] == 'pytyvo') {
             case 'finanzas':
                 $ruta_elegida = 'app/modulos/sistema/controlador/finanzas.php';
                 break;
+            case 'general':
+                $ruta_elegida = 'app/modulos/sistema/controlador/general.php';
+                break;
             case 'inventario':
                 $ruta_elegida = 'app/modulos/sistema/controlador/inventario.php';
                 break;
@@ -132,6 +141,9 @@ if ($partes_ruta[0] == 'pytyvo') {
         switch ($partes_ruta[1]) {
             case 'ajax':
                 switch ($partes_ruta[2]) {
+                    case 'depar-obtener-todos-vigente':
+                        $ruta_elegida = 'app/modulos/ajax/depar_obtener_todos_vigente.php';
+                        break;
                     case 'maquina-obtener-todos-vigente':
                         $ruta_elegida = 'app/modulos/ajax/maquina_obtener_todos_vigente.php';
                         break;
@@ -173,6 +185,14 @@ if ($partes_ruta[0] == 'pytyvo') {
                         break;
                   }
                 break;
+            case 'administrar-depar':
+                switch ($partes_ruta[2]) {
+                    case 'pagina':
+                        $pagina = (int) $partes_ruta[3];
+                        $ruta_elegida =
+                            'app/modulos/depar/controlador/administrar.php';
+                        break;
+                    }
             case 'administrar-estado-ot':
                 switch ($partes_ruta[2]) {
                     case 'pagina':

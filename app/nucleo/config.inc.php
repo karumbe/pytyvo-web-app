@@ -15,10 +15,16 @@ define('RUTA_CLIENTE', SERVIDOR . '/cliente');
 
 # AJAX
 define('RUTA_AJAX', SERVIDOR . '/ajax');
+define('RUTA_DEPAR_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/depar-obtener-todos-vigente');
 define('RUTA_MAQUINA_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/maquina-obtener-todos-vigente');
 define('RUTA_MARCA_OT_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/marca-ot-obtener-todos-vigente');
 define('RUTA_MOTIVO_CLIE_NOMBRE_EXISTE', RUTA_AJAX . '/motivo-ser-cliente-nombre-existe');
 define('RUTA_MOTIVO_CLIE_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/motivo-ser-cliente-obtener-todos-vigente');
+
+# Inicio > Definiciones > General
+define('RUTA_GENERAL', SERVIDOR . '/general');
+define('RUTA_ADMINISTRAR_DEPAR', SERVIDOR . '/administrar-depar');
+define('RUTA_MANTENER_DEPAR', SERVIDOR . '/mantener-depar');
 
 # Inicio > Definiciones > Finanzas
 define('RUTA_FINANZAS', SERVIDOR . '/finanzas');

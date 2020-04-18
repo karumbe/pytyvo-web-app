@@ -1,0 +1,8 @@
+E:\xampp\php\php.ini
+--------------------
+
+extension_dir = "\xampp\php\ext" => 
+extension_dir = "e:\xampp\php\ext"
+
+browscap = "\xampp\php\extras\browscap.ini" =>
+browscap = "e:\xampp\php\extras\browscap.ini"

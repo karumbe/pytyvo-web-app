@@ -10,6 +10,11 @@ if (!ControlSesion::sesion_iniciada())
 
 # inicio { establece el acceso a los módulos }
 
+# Inicio > Definiciones > General
+define('PUEDE_ACCEDER_DEPAR',
+    Seguridad::puede_acceder($_SESSION['cod_usuario'], 'depar'));
+# Inicio > Definiciones > General
+
 # Inicio > Definiciones > Finanzas
 define('PUEDE_ACCEDER_MONEDA',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'moneda'));
