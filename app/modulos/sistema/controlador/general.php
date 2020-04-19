@@ -11,6 +11,8 @@ if (!ControlSesion::sesion_iniciada())
 # inicio { establece el acceso a los módulos }
 define('PUEDE_ACCEDER_DEPAR',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'depar'));
+define('PUEDE_ACCEDER_CIUDAD',
+    Seguridad::puede_acceder($_SESSION['cod_usuario'], 'ciudad'));
 # fin { establece el acceso a los módulos }
 
 $titulo = 'General';

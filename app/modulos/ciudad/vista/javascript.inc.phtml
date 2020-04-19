@@ -1,0 +1,23 @@
+        <script src="<?php echo RUTA_JS ?>utiles.js"></script>
+        <script src="<?php echo RUTA_JS ?>ciudadValidador.js"></script>
+        <script>
+            $(function() {
+                if ($('#error-departamen').length)
+                    if ($('#error-departamen').text().trim().length)
+                        $('#error-departamen').css('display', 'block');
+
+                if ($('#error-nombre').length)
+                    if ($('#error-nombre').text().trim().length)
+                        $('#error-nombre').css('display', 'block');
+
+                if ($('#departamen').prop('type') === 'select-one')
+                    $('#departamen').select2({
+                        language: 'es',
+                        theme: 'bootstrap4'
+                    });
+
+                $(window).resize(function() {
+                    $('.select2').css('width', '100%');
+                });
+            });
+        </script>

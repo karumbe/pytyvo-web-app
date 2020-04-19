@@ -22,7 +22,8 @@
                             <li class="list-group-item bg-trans-dark">Definiciones</li>
 
                             <?php
-                            if (PUEDE_ACCEDER_DEPAR) {
+                            if (PUEDE_ACCEDER_DEPAR ||
+                                    PUEDE_ACCEDER_CIUDAD) {
                                 ?>
                                 <li class="list-group-item"><a href="<?php echo RUTA_GENERAL; ?>">General
                                 </a></li>

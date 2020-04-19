@@ -25,6 +25,8 @@ define('RUTA_MOTIVO_CLIE_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/motivo-ser-client
 define('RUTA_GENERAL', SERVIDOR . '/general');
 define('RUTA_ADMINISTRAR_DEPAR', SERVIDOR . '/administrar-depar');
 define('RUTA_MANTENER_DEPAR', SERVIDOR . '/mantener-depar');
+define('RUTA_ADMINISTRAR_CIUDAD', SERVIDOR . '/administrar-ciudad');
+define('RUTA_MANTENER_CIUDAD', SERVIDOR . '/mantener-ciudad');
 
 # Inicio > Definiciones > Finanzas
 define('RUTA_FINANZAS', SERVIDOR . '/finanzas');

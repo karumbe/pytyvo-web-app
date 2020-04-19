@@ -465,10 +465,11 @@ class Utiles {
                 self::variable_iniciada($repositorio)) {
             switch ($peticion) {
                 case 'crear':
-                    if ($repositorio !== 'Familia' &&
-                            $repositorio !== 'Unidad de medida' &&
+                    if ($repositorio !== 'Ciudad' &&
+                            $repositorio !== 'Familia' &&
+                            $repositorio !== 'Maquina' &&
                             $repositorio !== 'Marca' &&
-                            $repositorio !== 'Maquina')
+                            $repositorio !== 'Unidad de medida')
                         $titulo = 'Nuevo';
                     else
                         $titulo = 'Nueva';

@@ -22,6 +22,14 @@
             }
             ?>
 
+            <?php
+            if (PUEDE_ACCEDER_CIUDAD) {
+                ?>
+                <li class="list-group-item"><a href="<?php echo RUTA_ADMINISTRAR_CIUDAD; ?>">Ciudades</a></li>
+                <?php
+            }
+            ?>
+
         </ul>
     </div>
 </div>

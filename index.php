@@ -25,6 +25,12 @@ if ($partes_ruta[0] == 'pytyvo') {
             case 'cliente':
                 $ruta_elegida = 'app/modulos/cliente/controlador/cliente.php';
                 break;
+            case 'administrar-ciudad':
+                $ruta_elegida = 'app/modulos/ciudad/controlador/administrar.php';
+                break;
+            case 'mantener-ciudad':
+                $ruta_elegida = 'app/modulos/ciudad/controlador/mantener.php';
+                break;
             case 'administrar-depar':
                 $ruta_elegida = 'app/modulos/depar/controlador/administrar.php';
                 break;
@@ -185,6 +191,14 @@ if ($partes_ruta[0] == 'pytyvo') {
                         break;
                   }
                 break;
+            case 'administrar-ciudad':
+                switch ($partes_ruta[2]) {
+                    case 'pagina':
+                        $pagina = (int) $partes_ruta[3];
+                        $ruta_elegida =
+                            'app/modulos/ciudad/controlador/administrar.php';
+                        break;
+                    }
             case 'administrar-depar':
                 switch ($partes_ruta[2]) {
                     case 'pagina':

@@ -13,6 +13,8 @@ if (!ControlSesion::sesion_iniciada())
 # Inicio > Definiciones > General
 define('PUEDE_ACCEDER_DEPAR',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'depar'));
+define('PUEDE_ACCEDER_CIUDAD',
+    Seguridad::puede_acceder($_SESSION['cod_usuario'], 'ciudad'));
 # Inicio > Definiciones > General
 
 # Inicio > Definiciones > Finanzas
