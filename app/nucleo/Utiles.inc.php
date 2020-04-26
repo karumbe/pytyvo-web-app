@@ -748,5 +748,57 @@ class Utiles {
         return $texto;
     }
 
+    /**
+    * Calcula el dígito verificador del RUC.
+    *
+    * @param string $numero
+    * El número de RUC.
+    *
+    * @return integer|null
+    * Devuelve un entero si se pudo realizar el cálculo, null en caso contrario.
+    */
+    public static function calcular_dv($numero, $base_max = 11) {
+        if (!self::es_texto($numero))
+            return null;
+
+        $numero = self::alltrim($numero);
+
+        if (strlen($numero) === 0 || $numero === '')
+            return null;
+
+        $numero_al = '';
+
+        for ($i = 0; $i < strlen($numero); $i++) {
+            $caracter = strtoupper(substr($numero, $i, 1));
+            $codigo = ord($caracter);
+
+            if ($codigo >= 48 && $codigo <= 57) {    // de 0 a 9.
+                $numero_al .= $caracter;
+            } else {
+                $numero_al += $codigo;
+            }
+        }
+
+        $k = 2;
+        $total = 0;
+
+        for ($i = strlen($numero_al) - 1; $i >= 0; $i--) {
+            if ($k > $base_max)
+                $k = 2;
+
+            $numero_aux = (int) substr($numero_al, $i, 1);
+            $total += $numero_aux * $k++;
+        }
+
+        $resto = $total % 11;
+
+        if ($resto > 1)
+            $digito = 11 - $resto;
+        else
+            $digito = 0;
+
+        return $digito;
+    }
+
 }
 ?>

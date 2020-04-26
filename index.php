@@ -25,6 +25,12 @@ if ($partes_ruta[0] == 'pytyvo') {
             case 'cliente':
                 $ruta_elegida = 'app/modulos/cliente/controlador/cliente.php';
                 break;
+            case 'administrar-barrio':
+                $ruta_elegida = 'app/modulos/barrio/controlador/administrar.php';
+                break;
+            case 'mantener-barrio':
+                $ruta_elegida = 'app/modulos/barrio/controlador/mantener.php';
+                break;
             case 'administrar-ciudad':
                 $ruta_elegida = 'app/modulos/ciudad/controlador/administrar.php';
                 break;
@@ -147,6 +153,9 @@ if ($partes_ruta[0] == 'pytyvo') {
         switch ($partes_ruta[1]) {
             case 'ajax':
                 switch ($partes_ruta[2]) {
+                    case 'ciudad-obtener-todos-vigente-filtrado-por-depar':
+                        $ruta_elegida = 'app/modulos/ajax/ciudad_obtener_todos_vigente_filtrado_por_depar.php';
+                        break;
                     case 'depar-obtener-todos-vigente':
                         $ruta_elegida = 'app/modulos/ajax/depar_obtener_todos_vigente.php';
                         break;
@@ -191,6 +200,14 @@ if ($partes_ruta[0] == 'pytyvo') {
                         break;
                   }
                 break;
+            case 'administrar-barrio':
+                switch ($partes_ruta[2]) {
+                    case 'pagina':
+                        $pagina = (int) $partes_ruta[3];
+                        $ruta_elegida =
+                            'app/modulos/barrio/controlador/administrar.php';
+                        break;
+                    }
             case 'administrar-ciudad':
                 switch ($partes_ruta[2]) {
                     case 'pagina':

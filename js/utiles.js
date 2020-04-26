@@ -1,5 +1,9 @@
 const utiles = {
 
+    _urlBase: 'http://localhost/pytyvo',
+    obtenerUrlBase: function() {
+        return this._urlBase;
+    },
     existeElemento: function(id) {
         if (typeof id !== 'string')
             throw "El par\u00e1metro 'id' del m\u00e9todo 'existeElemento' en el espacio de nombre 'utiles', debe ser de tipo cadena.";
@@ -132,6 +136,25 @@ const utiles = {
             return true;
 
         return false;
+    },
+    cargarOpcionesMenuCiudad: function() {
+        let url = this.obtenerUrlBase() + '/ajax/ciudad-obtener-todos-vigente-filtrado-por-depar';
+        let departamen = parseInt($('#departamen').val());
+
+        $.getJSON(url, {"departamen": departamen})
+        .done(function(datos) {
+            $('#ciudad').empty().append('<option value="0"></option>');
+
+            if (datos.info.ok && datos.info.resultados > 0) {
+                $.each(datos.resultados, function(indice, resultado) {
+                    $('#ciudad').append('<option value="' + resultado.codigo + '">' + resultado.nombre + '</option>');
+                });
+            }
+        })
+        .fail(function(jqxhr, textoEstado, error) {
+                let err = textoEstado + ', ' + error;
+                console.log('Solicitud fallida: ' + err);
+        });
     }
 
 }

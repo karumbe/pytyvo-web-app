@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"obtener_",
+				"obtener_departamen"
+			],
+			[
+				"de",
+				"departamentos"
+			],
+			[
+				"ciud",
+				"ciudades"
+			],
+			[
+				"parse",
+				"parseInt"
+			],
+			[
+				"obten",
+				"obtenerUrlBase"
+			],
+			[
 				"VAR",
 				"var_dump"
 			],
@@ -494,26 +514,6 @@
 			[
 				"to",
 				"token"
-			],
-			[
-				"UNS",
-				"unset"
-			],
-			[
-				"au",
-				"autofocus\tAttr"
-			],
-			[
-				"in",
-				"inputt\tinput - text"
-			],
-			[
-				"caden",
-				"cadena_xml"
-			],
-			[
-				"cleinte",
-				"clientes"
 			]
 		]
 	},
@@ -593,29 +593,37 @@
 	},
 	"expanded_folders":
 	[
-		"/E/xampp/htdocs/pytyvo",
-		"/E/xampp/htdocs/pytyvo/app"
+		"/E/xampp/htdocs/pytyvo"
 	],
 	"file_history":
 	[
-		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/vista/javascript.inc.phtml",
-		"/E/xampp/htdocs/pytyvo/js/ciudadValidador.js",
-		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/controlador/mantener.php",
-		"/E/xampp/htdocs/pytyvo/app/nucleo/Utiles.inc.php",
-		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/modelo/CiudadValidador.inc.php",
-		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/modelo/CiudadDaoComImpl.inc.php",
+		"/E/xampp/htdocs/pytyvo/app/modulos/barrio/controlador/mantener.php",
+		"/E/xampp/htdocs/pytyvo/app/modulos/barrio/vista/javascript.inc.phtml",
+		"/E/xampp/htdocs/pytyvo/app/modulos/barrio/vista/validado.inc.phtml",
 		"/E/xampp/htdocs/pytyvo/app/nucleo/DaoBaseComImpl.inc.php",
-		"/E/xampp/htdocs/pytyvo/app/nucleo/ValidadorBaseComImpl.inc.php",
-		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/vista/administrar.inc.phtml",
-		"/E/xampp/htdocs/pytyvo/app/modulos/sistema/vista/general.inc.phtml",
-		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/modelo/Ciudad.inc.php",
+		"/E/xampp/htdocs/pytyvo/app/nucleo/Utiles.inc.php",
+		"/E/xampp/htdocs/pytyvo/app/modulos/barrio/modelo/BarrioValidador.inc.php",
+		"/E/xampp/htdocs/pytyvo/js/utiles.js",
+		"/E/xampp/htdocs/pytyvo/js/barrioValidador.js",
+		"/E/xampp/htdocs/pytyvo/app/modulos/ajax/ciudad_obtener_todos_vigente_filtrado_por_depar.php",
+		"/E/xampp/htdocs/pytyvo/index.php",
+		"/E/xampp/htdocs/pytyvo/app/nucleo/config.inc.php",
+		"/E/xampp/htdocs/pytyvo/app/modulos/ajax/depar_obtener_todos_vigente.php",
 		"/E/xampp/htdocs/pytyvo/app/modulos/sistema/vista/home.inc.phtml",
+		"/E/xampp/htdocs/pytyvo/app/modulos/sistema/vista/general.inc.phtml",
 		"/E/xampp/htdocs/pytyvo/app/modulos/sistema/controlador/general.php",
 		"/E/xampp/htdocs/pytyvo/app/modulos/sistema/controlador/home.php",
-		"/E/xampp/htdocs/pytyvo/app/nucleo/config.inc.php",
-		"/E/xampp/htdocs/pytyvo/index.php",
+		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/vista/actualizar.inc.phtml",
+		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/vista/crear.inc.phtml",
+		"/E/xampp/htdocs/pytyvo/js/ciudadValidador.js",
+		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/modelo/CiudadDaoComImpl.inc.php",
+		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/vista/javascript.inc.phtml",
+		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/controlador/mantener.php",
+		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/modelo/CiudadValidador.inc.php",
+		"/E/xampp/htdocs/pytyvo/app/nucleo/ValidadorBaseComImpl.inc.php",
+		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/vista/administrar.inc.phtml",
+		"/E/xampp/htdocs/pytyvo/app/modulos/ciudad/modelo/Ciudad.inc.php",
 		"/E/xampp/htdocs/pytyvo/pytyvo_web.sublime-project",
-		"/E/xampp/htdocs/pytyvo/app/modulos/ajax/depar_obtener_todos_vigente.php",
 		"/E/xampp/htdocs/pytyvo/app/modulos/marca/modelo/Marca.inc.php",
 		"/E/xampp/htdocs/pytyvo/app/modulos/barrio/modelo/Barrio.inc.php",
 		"/C/Users/VAIO/Desktop/Sublime Text Build 3176/Data/Packages/User/phpcs.sublime-settings",
@@ -716,16 +724,7 @@
 		"/E/xampp/htdocs/pytyvo/app/modulos/pais/controlador/administrar.php",
 		"/E/xampp/htdocs/pytyvo/app/modulos/unidad_medida/vista/crear.inc.phtml",
 		"/E/xampp/htdocs/pytyvo/app/modulos/unidad_medida/vista/validado.inc.phtml",
-		"/E/xampp/htdocs/pytyvo/app/modulos/unidad_medida/modelo/UnidadMedidaDaoComImpl.inc.php",
-		"/E/xampp/htdocs/pytyvo/app/modulos/unidad_medida/controlador/administrar.php",
-		"/E/xampp/htdocs/pytyvo/app/modulos/unidad_medida/modelo/UnidadMedida.inc.php",
-		"/E/xampp/htdocs/pytyvo/app/modulos/unidad_medida/modelo/UnidadMedidaDaoFactory.inc.php",
-		"/E/xampp/htdocs/pytyvo/app/modulos/unidad_medida/vista/borrar.inc.phtml",
-		"/E/xampp/htdocs/pytyvo/app/modulos/unidad_medida/vista/contenido.inc.phtml",
-		"/E/xampp/htdocs/pytyvo/css/estilos.css",
-		"/E/xampp/htdocs/pytyvo/app/modulos/estado_ot/modelo/EstadoOtDaoFactory.inc.php",
-		"/E/xampp/htdocs/pytyvo/app/modulos/sistema/controlador/servicio_tecnico.php",
-		"/E/xampp/htdocs/pytyvo/app/modulos/sistema/vista/403.phtml"
+		"/E/xampp/htdocs/pytyvo/app/modulos/unidad_medida/modelo/UnidadMedidaDaoComImpl.inc.php"
 	],
 	"find":
 	{
@@ -744,6 +743,21 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"gettype",
+			"Marca",
+			"una departamento",
+			"máquina",
+			"iudad-obtener-todos-vigente-filtrado-por-depar",
+			"departamentos",
+			"ciudadtamentos",
+			"departamentos",
+			"Depar",
+			"depar",
+			"modeloValidador",
+			"Marca",
+			"Maquina",
+			"marca",
+			"maquina",
 			"modeloValidador",
 			"maquina",
 			"Maquina",
@@ -856,22 +870,7 @@
 			"nombre_completo",
 			"Maquina",
 			"modulo",
-			"MARCA",
-			"Marca",
-			"marca",
-			"Marca",
-			"MARCA",
-			"Marca",
-			"obtener_t",
-			"MotivoClie",
-			"MOTIVO_CLIE",
-			"MotivoClie",
-			"familiaValidador",
-			"p2",
-			"p1",
-			"obtenerDivisible",
-			"_p2",
-			"_p1"
+			"MARCA"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -879,6 +878,17 @@
 		"regex": false,
 		"replace_history":
 		[
+			"un departamento",
+			"departamento",
+			"registros",
+			"ciudades",
+			"Ciudad",
+			"ciudad",
+			"barrioValidador",
+			"Ciudad",
+			"Departamen",
+			"ciudad",
+			"departamen",
 			"ciudadValidador",
 			"departamen",
 			"Departamen",
@@ -1069,7 +1079,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 221.0,
+	"side_bar_width": 194.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -15,6 +15,7 @@ define('RUTA_CLIENTE', SERVIDOR . '/cliente');
 
 # AJAX
 define('RUTA_AJAX', SERVIDOR . '/ajax');
+define('RUTA_CIUDAD_OBTENER_TODOS_VIGENTE_FILTRADO_POR_DEPAR', RUTA_AJAX . '/ciudad-obtener-todos-vigente-filtrado-por-depar');
 define('RUTA_DEPAR_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/depar-obtener-todos-vigente');
 define('RUTA_MAQUINA_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/maquina-obtener-todos-vigente');
 define('RUTA_MARCA_OT_OBTENER_TODOS_VIGENTE', RUTA_AJAX . '/marca-ot-obtener-todos-vigente');
@@ -27,6 +28,8 @@ define('RUTA_ADMINISTRAR_DEPAR', SERVIDOR . '/administrar-depar');
 define('RUTA_MANTENER_DEPAR', SERVIDOR . '/mantener-depar');
 define('RUTA_ADMINISTRAR_CIUDAD', SERVIDOR . '/administrar-ciudad');
 define('RUTA_MANTENER_CIUDAD', SERVIDOR . '/mantener-ciudad');
+define('RUTA_ADMINISTRAR_BARRIO', SERVIDOR . '/administrar-barrio');
+define('RUTA_MANTENER_BARRIO', SERVIDOR . '/mantener-barrio');
 
 # Inicio > Definiciones > Finanzas
 define('RUTA_FINANZAS', SERVIDOR . '/finanzas');

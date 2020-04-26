@@ -60,8 +60,8 @@ const ciudadValidador = {
         if (nombre.length === 0 || nombre.trim() === '')
             return 'El nombre no puede quedar en blanco.';
 
-        if (nombre.length < 3)
-            return 'El nombre es demasiado corto (mínimo 3 caracteres).';
+        if (nombre.length < 6)
+            return 'El nombre es demasiado corto (mínimo 6 caracteres).';
 
         if (nombre.length > 30)
             return 'El nombre es demasiado largo (máximo 30 caracteres).';

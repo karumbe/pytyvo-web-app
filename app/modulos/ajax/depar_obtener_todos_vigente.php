@@ -31,20 +31,20 @@ if (is_null($repositorio)) {
 }
 # fin { validaciones }
 
-$departamentos = array();
+$registros = array();
 $filas = $repositorio->obtener_todos('vigente');
 
 foreach ($filas as $fila) {
-    $departamentos[] = array('codigo' => (int) $fila->obtener_codigo(),
-                             'nombre' => (string) $fila->obtener_nombre(),
-                             'vigente' => (bool) $fila->esta_vigente());
+    $registros[] = array('codigo' => (int) $fila->obtener_codigo(),
+                         'nombre' => (string) $fila->obtener_nombre(),
+                         'vigente' => (bool) $fila->esta_vigente());
 }
 
 $respuesta = array('info' => array('ok' => true,
                                    'estado' => 'exito',
-                                   'resultados' => count($departamentos),
+                                   'resultados' => count($registros),
                                    'version' => '1.0'),
-                   'resultados' => $departamentos);
+                   'resultados' => $registros);
 
 echo json_encode($respuesta);
 ?>

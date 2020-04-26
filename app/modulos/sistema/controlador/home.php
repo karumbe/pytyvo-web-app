@@ -15,6 +15,8 @@ define('PUEDE_ACCEDER_DEPAR',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'depar'));
 define('PUEDE_ACCEDER_CIUDAD',
     Seguridad::puede_acceder($_SESSION['cod_usuario'], 'ciudad'));
+define('PUEDE_ACCEDER_BARRIO',
+    Seguridad::puede_acceder($_SESSION['cod_usuario'], 'barrio'));
 # Inicio > Definiciones > General
 
 # Inicio > Definiciones > Finanzas

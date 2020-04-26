@@ -105,7 +105,7 @@ class CiudadDaoComImpl extends DaoBaseComImpl {
     * del tipo especificado en el parámetro $modelo.
     *
     * @param object $modelo
-    * Ciudad en el que se cargarán los datos.
+    * Modelo en el que se cargarán los datos.
     *
     * @param SimpleXMLElement object $datos.
     * Objeto que contiene los datos.
@@ -150,6 +150,7 @@ class CiudadDaoComImpl extends DaoBaseComImpl {
     * @return boolean
     * Devuelve true si la variable es válida y false en caso contrario.
     */
+    # @Override
     protected function validar_param_codigo($valor) {
         return Utiles::rango_entero($valor, 1, 99999);
     }

@@ -30,6 +30,14 @@
             }
             ?>
 
+            <?php
+            if (PUEDE_ACCEDER_BARRIO) {
+                ?>
+                <li class="list-group-item"><a href="<?php echo RUTA_ADMINISTRAR_BARRIO; ?>">Barrios</a></li>
+                <?php
+            }
+            ?>
+
         </ul>
     </div>
 </div>
